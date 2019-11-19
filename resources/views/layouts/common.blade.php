@@ -19,6 +19,5 @@
 <footer>
     <p>© 2019 darts-arrange All rights Reserved.</p>
 </footer>
-
 </body>
 </html>
