@@ -18,3 +18,23 @@
 Route::get('/', function () {
     return view('index');
 });
+
+Route::get('/tech', function () {
+    return view('welcome');
+});
+
+Route::get('/contact',  function () {
+    return view('contact');
+});
+
+Route::get('/privacy',  function () {
+    return view('privacy');
+});
+
+Route::get('/service',  function () {
+    return view('service');
+});
+
+Route::get('/arrange-data/top',  function () {
+    return view('/arrange-data/top');
+});
