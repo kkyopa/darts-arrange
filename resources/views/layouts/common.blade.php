@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 <nav>
     <ul>
-        <li class=”current”><a href=”#”>ホーム</a></li>
-        <li><a href=”#”>アレンジデータ</a></li>
-        <li><a href=”#”>利用規約</a></li>
-        <li><a href=”#”>プライバシーポリシー</a></li>
-        <li><a href=”#”>お問い合わせ</a></li>
+        <li class=”current”><a href="{{ url('/') }}">ホーム</a></li>
+        <li><a href="{{ url('arrange-data/top') }}">アレンジデータ</a></li>
+        <li><a href="{{ url('/service') }}">利用規約</a></li>
+        <li><a href="{{ url('/privacy') }}">プライバシーポリシー</a></li>
+        <li><a href="{{ url('/contact') }}">お問い合わせ</a></li>
     </ul>
 </nav>
        @yield('content')
