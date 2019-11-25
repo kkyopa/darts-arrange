@@ -71,7 +71,19 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">ホーム</a>
+                        <!-- <a href="{{ url('/home') }}">ホーム</a> -->
+                        <a href="{{ url('arrange-data/top') }}">アレンジデータ</a>
+                        <a href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                            ログアウト
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+                        <a href="{{ url('/service') }}">利用規約</a>
+                        <a href="{{ url('/privacy') }}">プライバシーポリシー</a>
+                        <a href="{{ url('/contact') }}">お問い合わせ</a>
                     @else
                         <a href="{{ route('login') }}">ログイン</a>
                         <a href="{{ route('register') }}">ユーザー登録</a>
