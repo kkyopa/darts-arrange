@@ -9,5 +9,5 @@
     </p>
 </div>
 
-<img alt="文字表示" class="twitter_icon"  src="{{ asset('/img/twitter-icon.jpg') }}">
+<a href="https://twitter.com/kazumons" target="_blank"><img alt="文字表示" class="twitter_icon"  src="{{ asset('/img/twitter-icon.jpg') }}"></a>
 @endsection

@@ -71,7 +71,7 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">ホーム</a>
+                        <!-- <a href="{{ url('/home') }}">ホーム</a> -->
                         <a href="{{ url('arrange-data/top') }}">アレンジデータ</a>
                         <a href="{{ route('logout') }}"
                             onclick="event.preventDefault();
