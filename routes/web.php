@@ -38,3 +38,15 @@ Route::get('/service',  function () {
 Route::get('/arrange-data/top',  function () {
     return view('/arrange-data/top');
 });
+
+Route::get('/problem/openout',  function () {
+    return view('/problem/openout');
+});
+
+Route::get('/problem/masterout',  function () {
+    return view('/problem/masterout');
+});
+
+Route::get('/problem/perfect',  function () {
+    return view('/problem/perfect');
+});

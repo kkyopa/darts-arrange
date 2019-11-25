@@ -5,8 +5,8 @@
         <p>オープンアウト編・マスターアウト編・パーフェクト編を自分で選択し空いた時間に気軽に対策が行なえます。</p>
         <!-- <p>ログイン機能を使えばオリジナルのアレンジ問題を作成し解くことが可能です。</p> -->
         <div class="arrengeproblem">
-            <a href="" class="btn-sticky">オープンアウト編</a>
-            <a href="" class="btn-sticky">マスターアウト編</a>
-            <a href="" class="btn-sticky">パーフェクト編</a>
+            <a href="{{ url('problem/openout') }}" class="btn-sticky">オープンアウト編</a>
+            <a href="{{ url('problem/masterout') }}" class="btn-sticky">マスターアウト編</a>
+            <a href="{{ url('problem/perfect') }}" class="btn-sticky">パーフェクト編</a>
         </div>
 @endsection
