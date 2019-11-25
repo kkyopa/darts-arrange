@@ -1,4 +1,4 @@
-@extends('layouts.common')
+@extends('layouts.app')
 @section('content')
 <div id="first_title">
     <h1>利用規約</h1>

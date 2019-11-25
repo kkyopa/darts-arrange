@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -20,4 +20,4 @@
     <p>© 2019 darts-arrange All rights Reserved.</p>
 </footer>
 </body>
-</html>
+</html> -->

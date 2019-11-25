@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -28,7 +29,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/welcome') }}">
+                    <a class="navbar-brand" href="{{ url('') }}">
                         <!-- {{ config('app.name', 'Laravel') }} -->
                         ホーム
                     </a>
@@ -44,11 +45,8 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @guest
-                            <li><a href="{{ url('/service') }}">利用規約</a></li>
-                            <li><a href="{{ url('/privacy') }}">プライバシーポリシー</a></li>
-                            <li><a href="{{ url('/contact') }}">お問い合わせ</a></li>
                             <li><a href="{{ route('login') }}">ログイン</a></li>
-                            <li><a href="{{ route('register') }}">ユーザー登録</a></li>
+                            <li><a href="{{ route('register') }}">新規登録</a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
@@ -74,7 +72,9 @@
                 </div>
             </div>
         </nav>
-
+        <footer>
+            <p>© 2019 darts-arrange All rights Reserved.</p>
+        </footer>
         @yield('content')
     </div>
 

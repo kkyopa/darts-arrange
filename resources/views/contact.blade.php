@@ -1,7 +1,5 @@
-@extends('layouts.common')
+@extends('layouts.app')
 @section('content')
-
-
 <div class="description">
     <p>
         サービスに対するご意見・ご要望などがございましたら、お問い合わせはTwitterからお気軽にお問い合わせください。

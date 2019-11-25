@@ -27,9 +27,9 @@ nav{
     width: 10%;
     min-width: 90px;
     }
-    nav li:not(:last-child){
+    /* nav li:not(:last-child){
     border-right:2px solid #ddd;
-    }
+    } */
     nav a{
     text-decoration: none;
     color: #333;
