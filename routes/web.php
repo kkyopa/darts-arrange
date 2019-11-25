@@ -19,7 +19,7 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/tech', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
 
@@ -50,3 +50,6 @@ Route::get('/problem/masterout',  function () {
 Route::get('/problem/perfect',  function () {
     return view('/problem/perfect');
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
