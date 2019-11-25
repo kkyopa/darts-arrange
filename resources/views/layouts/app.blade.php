@@ -44,6 +44,9 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @guest
+                            <li><a href="{{ url('/service') }}">利用規約</a></li>
+                            <li><a href="{{ url('/privacy') }}">プライバシーポリシー</a></li>
+                            <li><a href="{{ url('/contact') }}">お問い合わせ</a></li>
                             <li><a href="{{ route('login') }}">ログイン</a></li>
                             <li><a href="{{ route('register') }}">ユーザー登録</a></li>
                         @else

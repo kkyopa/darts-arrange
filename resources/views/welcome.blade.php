@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="{{ asset('js/app.js') }}" defer></script>
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet">
         <title>Laravel</title>
 
         <!-- Fonts -->
@@ -74,6 +75,9 @@
                     @else
                         <a href="{{ route('login') }}">ログイン</a>
                         <a href="{{ route('register') }}">ユーザー登録</a>
+                        <a href="{{ url('/service') }}">利用規約</a>
+                        <a href="{{ url('/privacy') }}">プライバシーポリシー</a>
+                        <a href="{{ url('/contact') }}">お問い合わせ</a>
                     @endauth
                 </div>
             @endif
@@ -81,6 +85,11 @@
             <div class="content">
                 <div class="title m-b-md">
                     ダーツアレンジデータ
+                </div>
+                <div class="description">
+                    <p>このアプリはユーザーがダーツによるオリジナルのアレンジをウェブ上に保存、閲覧が可能です。</p><br>
+                    <p>ウェブ上に保存したものからユーザーがもっとも多く回答したアレンジを抽出しランキング化した表も記載しております。</p><br>
+                    <p>オープンアウト編・マスターアウト編・パーフェクト編３種類ございます。空いた時間に気軽に対策してください</p>
                 </div>
                 <!-- <div id="app">
                 <example-component></example-component>
@@ -95,5 +104,8 @@
                 </div> -->
             </div>
         </div>
+        <footer>
+            <p>© 2019 darts-arrange All rights Reserved.</p>
+        </footer>
     </body>
 </html>
