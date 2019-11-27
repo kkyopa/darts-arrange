@@ -5,75 +5,29 @@
 <form method="post" enctype="multipart/form-data">
 <!-- <form method="post" action="route　かっこ2つ ('posts.create') かっこ2つ" enctype="multipart/form-data"> -->
  <!-- @csrf -->
- <div class="form">
+ <div class="input-table">
  <table>
-
-<tr>
-<th></th><th>1本目</th> <th>2本目</th> <th>3本目</th>
-</tr>
-
-<tr>
-  <th>1</th><td><p><input type="text" name="name" size="3" class="example1"></p></td> <td><p><input type="text" name="name" size="3" class="example1"></p></td> <td><p><input type="text" name="name" size="3" class="example1"></p></td>
-</tr>
-
-<tr>
-<th>2</th><td><p><input type="text" name="name" size="3" class="example1"></p></td> <td><p><input type="text" name="name" size="3" class="example1"></p></td> <td><p><input type="text" name="name" size="3" class="example1"></p></td>
-</tr>
-
-<tr>
-<th>3</th><td><p><input type="text" name="name" size="3" class="example1"></p></td> <td><p><input type="text" name="name" size="3" class="example1"></p></td> <td><p><input type="text" name="name" size="3" class="example1"></p></td>
-</tr>
-
-<tr>
-<th>4</th><td><p><input type="text" name="name" size="3" class="example1"></p></td> <td><p><input type="text" name="name" size="3" class="example1"></p></td> <td><p><input type="text" name="name" size="3" class="example1"></p></td>
-</tr>
-
-<tr>
-<th>5</th><td><p><input type="text" name="name" size="3" class="example1"></p></td> <td><p><input type="text" name="name" size="3" class="example1"></p></td> <td><p><input type="text" name="name" size="3" class="example1"></p></td>
-</tr>
-
-<tr>
-<th>6</th><td><p><input type="text" name="name" size="3" class="example1"></p></td> <td><p><input type="text" name="name" size="3" class="example1"></p></td> <td><p><input type="text" name="name" size="3" class="example1"></p></td>
-</tr>
-
-<tr>
-<th>7</th><td><p><input type="text" name="name" size="3" class="example1"></p></td> <td><p><input type="text" name="name" size="3" class="example1"></p></td> <td><p><input type="text" name="name" size="3" class="example1"></p></td>
-</tr>
-
-<tr>
-<th>8</th><td><p><input type="text" name="name" size="3" class="example1"></p></td> <td><p><input type="text" name="name" size="3" class="example1"></p></td> <td><p><input type="text" name="name" size="3" class="example1"></p></td>
-</tr>
-
-<tr>
-<th>9</th><td><p><input type="text" name="name" size="3" class="example1"></p></td> <td><p><input type="text" name="name" size="3" class="example1"></p></td> <td><p><input type="text" name="name" size="3" class="example1"></p></td>
-</tr>
-
-<tr>
-<th>10</th><td><p><input type="text" name="name" size="3" class="example1"></p></td> <td><p><input type="text" name="name" size="3" class="example1"></p></td> <td><p><input type="text" name="name" size="3" class="example1"></p></td>
-</tr>
-
-<tr>
-<th>174</th><td><p><input type="text" name="name" size="3" class="example1"></p></td> <td><p><input type="text" name="name" size="3" class="example1"></p></td> <td><p><input type="text" name="name" size="3" class="example1"></p></td>
-</tr>
-
-<tr>
-<th>177</th><td><p><input type="text" name="name" size="3" class="example1"></p></td> <td><p><input type="text" name="name" size="3" class="example1"></p></td> <td><p><input type="text" name="name" size="3" class="example1"></p></td>
-</tr>
-
-<tr>
-<th>180</th><td><p><input type="text" name="name" size="3" class="example1"></p></td> <td><p><input type="text" name="name" size="3" class="example1"></p></td> <td><p><input type="text" name="name" size="3" class="example1"></p></td>
-</tr>
-
+<tr><th>&nbsp;</th><th>1本目</th><th>2本目</th><th>3本目</th>
+<?php
+for ( $i = 1; $i <= 180; $i++ ) {
+  if ($i == 163 || $i == 166 || $i == 169 || $i == 172 || $i == 173 || $i == 175 || $i == 176 || $i == 178 || $i == 179 ) {
+    continue;
+  } else {
+  echo '<tr>';
+  echo '<th>' . $i . '</th>';
+  }
+    for ( $j = 1; $j <= 3; $j++ ) {
+      echo '<td>' . '<input type="text" name="name" size="10" class="example1">'. '</td>';
+    }
+  echo '</tr>' . "\n";
+}
+?>
 </table>
 </div>
-
-<div class="form-submit">
-    <button type="submit">投稿する</button>
-</div>
-
 </form>
 
-
-
+<div class="description">
+    <button type="submit">投稿する</button>
+</div>
 
 @endsection
