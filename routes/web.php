@@ -34,9 +34,12 @@ Route::get('/arrange-data/top',  function () {
     return view('/arrange-data/top');
 });
 
-Route::get('/problem/openout',  function () {
-    return view('/problem/openout');
-});
+// Route::get('/problem/openout',  function () {
+//     return view('/problem/openout');
+// });
+
+Route::get('/problem/openout', 'OpenOutController@index');
+
 
 Route::get('/problem/masterout',  function () {
     return view('/problem/masterout');
