@@ -24,10 +24,11 @@ for ( $i = 1; $i <= 180; $i++ ) {
 ?>
 </table>
 </div>
-</form>
 
 <div class="description">
-    <button type="submit">投稿する</button>
+<textarea name="kanso" rows="4" cols="40">メモとしてご使用ください！</textarea><br>
+<input type="submit" value="送信">
+</form>
 </div>
 
 @endsection
