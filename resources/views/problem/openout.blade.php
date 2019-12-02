@@ -17,7 +17,12 @@ for ( $i = 1; $i <= 180; $i++ ) {
   echo '<th>' . $i . '</th>';
   }
     for ( $j = 1; $j <= 3; $j++ ) {
-      echo '<td>' . '<input type="text" name="name" size="10" class="example1">'. '</td>';
+      echo '<td>' . '<input type="text" name="name" size="10" class="arrange_create">'.
+      '<select name="select_single_double_triple">
+      <option value=1>single</option>
+      <option value=2>double</option>
+      <option value=3>triple</option>' .
+      '</td>';
     }
   echo '</tr>' . "\n";
 }
@@ -29,6 +34,13 @@ for ( $i = 1; $i <= 180; $i++ ) {
 <textarea name="kanso" rows="4" cols="40">メモとしてご使用ください！</textarea><br>
 <input type="submit" value="送信">
 </form>
+
+<!-- <script type="text/javascript">
+
+  var select_zone = document.getElementById("select_single_double_triple").value;
+  console.log("Inside 1st group");
+
+</script> -->
 </div>
 
 @endsection
