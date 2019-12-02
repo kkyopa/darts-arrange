@@ -35,12 +35,6 @@ for ( $i = 1; $i <= 180; $i++ ) {
 <input type="submit" value="送信">
 </form>
 
-<!-- <script type="text/javascript">
-
-  var select_zone = document.getElementById("select_single_double_triple").value;
-  console.log("Inside 1st group");
-
-</script> -->
 </div>
 
 @endsection
