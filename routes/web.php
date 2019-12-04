@@ -50,4 +50,8 @@ Route::get('/problem/perfect',  function () {
 });
 Auth::routes();
 
+Route::get('/user/profile',  function () {
+    return view('/user/profile');
+});
+
 Route::get('/home', 'HomeController@index')->name('home');
