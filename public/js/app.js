@@ -977,6 +977,10 @@ module.exports = __webpack_require__(44);
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+//   const app = new Vue({
+//     el: '#app'
+// });
+
 __webpack_require__(11);
 
 window.Vue = __webpack_require__(35);
@@ -990,8 +994,11 @@ __webpack_require__(39);
 
 Vue.component('example-component', __webpack_require__(40));
 
-var app = new Vue({
-  el: '#app'
+$("#button1").click(function () {
+  // value値を取得
+  var str1 = $("#select_single_double_triple").val();
+  console.log(str1);
+  // $("#span1").text(str1);
 });
 
 /***/ }),
@@ -44507,8 +44514,16 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* 39 */
 /***/ (function(module, exports) {
 
-$(function () {
-    alert('aaaaa');
+// $(function() {
+//     alert('aaaaa');
+// });
+
+// var hoge = $("#huga").val();
+
+$("#button1").click(function () {
+  // value値を取得
+  var str1 = $("#select_single_double_triple").val();
+  $("#span1").text(str1);
 });
 
 /***/ }),

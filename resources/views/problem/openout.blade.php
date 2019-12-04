@@ -18,14 +18,16 @@ for ( $i = 1; $i <= 180; $i++ ) {
   }
     for ( $j = 1; $j <= 3; $j++ ) {
       echo '<td>' . '<input type="text" name="name" size="10" class="arrange_create">'.
-      '<select name="select_single_double_triple">
+      '<select name="names" id ="select_single_double_triple">
       <option value=1>single</option>
       <option value=2>double</option>
       <option value=3>triple</option>' .
+      '</select>'.
       '</td>';
     }
   echo '</tr>' . "\n";
 }
+
 ?>
 </table>
 </div>

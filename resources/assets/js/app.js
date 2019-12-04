@@ -5,6 +5,10 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+ //   const app = new Vue({
+//     el: '#app'
+// });
+
 require('./bootstrap');
 
 window.Vue = require('vue');
@@ -18,6 +22,10 @@ require('./script');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
-const app = new Vue({
-    el: '#app'
-});
+
+// $("#button1").click(function() {
+//     // value値を取得
+//     const str1 = $("#select_single_double_triple").val();
+//     console.log(str1);
+//     // $("#span1").text(str1);
+//   });
