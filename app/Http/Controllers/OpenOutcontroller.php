@@ -4,13 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Model\Openout;
 
 class OpenOutcontroller extends Controller
 {
     public function index() {
-        // $openout = Openout::all(); // 全データの取り出し
-        // return view('/problem/openout', ["openout" => $openout]);
         return view('/problem/openout');
     }
 
@@ -27,7 +24,7 @@ class OpenOutcontroller extends Controller
         $arrangethird = $request->input('arrangethird');
         $arrangememo = $request->input('arrangememo');
 
-        Openout::insert(["arrangefirst" => $arrangefirst, "arrangesecond" => $arrangesecond, "arrangethird" => $arrangethird, "arrangememo" => $arrangememo]); // データベーステーブルOpenoutに投稿内容を入れる
+        // Openout::insert(["arrangefirst" => $arrangefirst, "arrangesecond" => $arrangesecond, "arrangethird" => $arrangethird, "arrangememo" => $arrangememo]); // データベーステーブルOpenoutに投稿内容を入れる
 
         // $bbs = Openout::all(); // 全データの取り出し
         // return view('/problem/openout', ["openout" => $opennout]); // bbs.indexにデータを渡す
