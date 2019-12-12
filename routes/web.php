@@ -34,11 +34,9 @@ Route::get('/arrange-data/top',  function () {
     return view('/arrange-data/top');
 });
 
-// Route::get('/problem/openout',  function () {
-//     return view('/problem/openout');
-// });
-
 Route::get('/problem/openout', 'OpenOutController@index');
+Route::post('/problem/openout', 'OpenOutController@store');
+// Route::resource('/problem/openout', 'OpenOutController', ['only' => ['create', 'store']]);
 
 
 Route::get('/problem/masterout',  function () {
@@ -48,10 +46,12 @@ Route::get('/problem/masterout',  function () {
 Route::get('/problem/perfect',  function () {
     return view('/problem/perfect');
 });
+
 Auth::routes();
 
-Route::get('/user/profile',  function () {
-    return view('/user/profile');
-});
+
+Route::get('/user/profile', 'OpenOutController@profile');
+Route::post('/user/profile', 'OpenOutController@profile');
+
 
 Route::get('/home', 'HomeController@index')->name('home');

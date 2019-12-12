@@ -10,12 +10,30 @@
 氏名
 {{ Auth::user()->name }}
 
+
 メールアドレス
 {{ Auth::user()->email }}
 
 </div><br>
 
 <h3>オープンアウト</h3>
+
+@isset($openout)
+@foreach ($openout as $d)
+    <h4>{{ $d->arrangenumber }}のアレンジ</h4>
+    １投目<br>
+    <h4>{{ $d->arrangefirst }}</h4>
+    ２投目<br>
+    <h4>{{ $d->arrangesecond }}</h4>
+    ３投目<br>
+    <h4>{{ $d->arrangethird }}</h4>
+    <h4>メモ</h4><br>
+    <h4>{{ $d->arrangememo }}</h4>
+    <br><hr>
+@endforeach
+@endisset
+
+
 
 <table >
 <tr><th>&nbsp;</th><th>1本目</th><th>2本目</th><th>3本目</th>
