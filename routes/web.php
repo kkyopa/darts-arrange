@@ -35,9 +35,8 @@ Route::get('/arrange-data/top',  function () {
 });
 
 Route::get('/problem/openout', 'OpenOutController@index');
-Route::post('/problem/openout', 'OpenOutController@store');
+Route::post('/problem/openout', 'OpenOutController@create');
 // Route::resource('/problem/openout', 'OpenOutController', ['only' => ['create', 'store']]);
-
 
 Route::get('/problem/masterout',  function () {
     return view('/problem/masterout');
@@ -52,6 +51,4 @@ Auth::routes();
 
 Route::get('/user/profile', 'OpenOutController@profile');
 Route::post('/user/profile', 'OpenOutController@profile');
-
-
 Route::get('/home', 'HomeController@index')->name('home');

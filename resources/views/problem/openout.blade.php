@@ -18,7 +18,8 @@
 
 <!-- フォームエリア -->
 <h2>アレンジ</h2>
-<form action="../user/profile" method="POST">
+<!-- <form action="../user/profile" method="POST"> -->
+<form action="openout" method="POST">
 {{ csrf_field() }}
 
     <input type="hidden" name="arrangeid" value="{{ Auth::user()->id }}"><br><br>

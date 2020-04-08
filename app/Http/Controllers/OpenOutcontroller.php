@@ -18,28 +18,7 @@ class OpenOutcontroller extends Controller
         return view('/user/profile', ["openout" => $openout]);
     }
 
-    // public function create(Request $request) {
-
-    //     // バリデーションチェック
-    //     // $request->validate([
-    //     //     'arrangememo' => 'required|min:5|max:140',
-    //     // ]);
-
-    //     // 投稿内容の受け取って変数に入れる
-    //     $arrangenumber = $request->input('arrangenumber');
-    //     $arrangefirst = $request->input('arrangefirst');
-    //     $arrangesecond = $request->input('arrangesecond');
-    //     $arrangethird = $request->input('arrangethird');
-    //     $arrangememo = $request->input('arrangememo');
-
-    //     OpenOut::insert(["arrangenumber" => $arrangenumber,"arrangefirst" => $arrangefirst, "arrangesecond" => $arrangesecond, "arrangethird" => $arrangethird, "arrangememo" => $arrangememo]); // データベーステーブルOpenoutに投稿内容を入れる
-
-    //     $openout = Openout::all(); // 全データの取り出し
-    //     return view('../user/profile', ["openout" => $openout]); // bbs.indexにデータを渡す
-    //     $openout->save();
-    // }
-
-    public function store(Request $request)
+    public function create(Request $request)
 {
     $arrange = new OpenOut;
     $arrange->user_id = $request->arrangeid;
@@ -48,7 +27,10 @@ class OpenOutcontroller extends Controller
     $arrange->arrangesecond = $request->arrangesecond;
     $arrange->arrangethird = $request->arrangethird;
     $arrange->arrangememo = $request->arrangememo;
-    $arrange->save();
+    // $arrange->save();
+    Openout::insert(["user_id" => $arrange->user_id, "arrangenumber" => $arrange->arrangenumber, "arrangefirst" => $arrange->arrangefirst, "arrangesecond" => $arrange->arrangesecond, "arrangethird" => $arrange->arrangethird, "arrangememo" => $arrange->arrangememo]); // データベーステーブルbbsに投稿内容を入れる
+    $openout = OpenOut::all(); // 全データの取り出し
+    return view('/problem/openout', ["openout" => $openout]);
 }
 }
 
