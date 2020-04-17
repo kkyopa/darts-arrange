@@ -99,17 +99,20 @@ return [
     // |
     // */
 
-    // 'custom' => [
-    //     'attribute-name' => [
-    //         'rule-name' => 'custom-message',
-    //     ],
-    //     'email' => [
-    //         'required' => 'メールアドレスを入力してください',
-    //     ],
-    //     'password' => [
-    //         'required' => 'パスワードを入力してください',
-    //     ],
-    // ],
+    'custom' => [
+        // 'attribute-name' => [
+        //     'rule-name' => 'custom-message',
+        // ],
+        // 'email' => [
+        //     'required' => 'メールアドレスを入力してください',
+        // ],
+        // 'password' => [
+        //     'required' => 'パスワードを入力してください',
+        // ],
+        'rating' => [
+            'required' => '入力してください',
+        ],
+    ],
 
     // /*
     // |--------------------------------------------------------------------------
@@ -206,7 +209,7 @@ return [
         ],
 
         'attributes' => [
-            // 'email' => 'メールアドレス',
+            'rating' => 'フライト',
             // 'password' => 'パスワード',
             // 'password_confirmation' => 'パスワード（確認）',
             // 'name' => 'ユーザー名'
