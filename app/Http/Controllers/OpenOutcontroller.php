@@ -7,8 +7,6 @@ use App\Openout;
 use App\User;
 use Illuminate\Support\Facades\DB;
 
-
-
 class OpenOutcontroller extends Controller
 {
     public function index() {
@@ -25,7 +23,6 @@ class OpenOutcontroller extends Controller
         return view('/user/profile', ["openout" => $openout]);
     }
 
-
     public function create(Request $request)
 {
     $arrange = new OpenOut;
@@ -41,4 +38,3 @@ class OpenOutcontroller extends Controller
     return view('/problem/openout', ["openout" => $openout]);
 }
 }
-
