@@ -12,7 +12,7 @@ class OpenOutcontroller extends Controller
     public function index() {
 
         $query = DB::table('openouts');
-        $query->select('user_id', 'arrangenumber', 'arrangefirst', 'arrangesecond', 'arrangethird', 'arrangememo');
+        $query->select('id', 'arrangenumber', 'arrangefirst', 'arrangesecond', 'arrangethird', 'arrangememo');
         $query->orderBy('arrangenumber', 'asc');
         $openout = $query->paginate(10);
         return view('openout/openout', compact('openout'));
@@ -26,19 +26,19 @@ class OpenOutcontroller extends Controller
     public function create(Request $request)
 {
     $arrange = new OpenOut;
-    $arrange->user_id = $request->arrangeid;
+    $arrange->id = $request->arrangeid;
     $arrange->arrangenumber = $request->arrangenumber;
     $arrange->arrangefirst = $request->arrangefirst;
     $arrange->arrangesecond = $request->arrangesecond;
     $arrange->arrangethird = $request->arrangethird;
     $arrange->arrangememo = $request->arrangememo;
-    Openout::insert(["user_id" => $arrange->user_id, "arrangenumber" => $arrange->arrangenumber, "arrangefirst" => $arrange->arrangefirst, "arrangesecond" => $arrange->arrangesecond, "arrangethird" => $arrange->arrangethird, "arrangememo" => $arrange->arrangememo]); // データベーステーブルbbsに投稿内容を入れる
+    Openout::insert(["id" => $arrange->id, "arrangenumber" => $arrange->arrangenumber, "arrangefirst" => $arrange->arrangefirst, "arrangesecond" => $arrange->arrangesecond, "arrangethird" => $arrange->arrangethird, "arrangememo" => $arrange->arrangememo]); // データベーステーブルbbsに投稿内容を入れる
 
     // 全件取得するコードを書くとメゾットがないと言われるから条件を絞ればって書いてあったけど...単純にpaginateがなかっただけだったかも
     // $openout = OpenOut::all(); // 全データの取り出し
     // return view('openout/openout', ["openout" => $openout]);
     $query = DB::table('openouts');
-    $query->select('user_id', 'arrangenumber', 'arrangefirst', 'arrangesecond', 'arrangethird', 'arrangememo');
+    $query->select('id', 'arrangenumber', 'arrangefirst', 'arrangesecond', 'arrangethird', 'arrangememo');
     $query->orderBy('arrangenumber', 'asc');
     $openout = $query->paginate(10);
     return view('openout/openout', compact('openout'));
@@ -46,7 +46,7 @@ class OpenOutcontroller extends Controller
 
     public function show($id){
         $openout = Openout::find($id);
-        return view('/openout/openout_show', compact('openout'));
+        return view('/openout/show', compact('openout'));
     }
 
 }

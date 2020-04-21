@@ -29,7 +29,7 @@ Route::get('/arrange-data/top',  function () {
 // オープンアウト
 Route::get('/openout', 'OpenOutController@index');
 Route::post('/openout', 'OpenOutController@create');
-Route::get('/openout/{id}', 'OpenOutController@show');
+Route::get('/openout/show/{id}', 'OpenOutController@show');
 
 
 
