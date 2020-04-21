@@ -18,6 +18,44 @@ Route::get('/', function () {
 //     return view('welcome');
 // });
 
+
+// アレンジデータ
+
+Route::get('/arrange-data/top',  function () {
+    return view('/arrange-data/top');
+});
+
+
+// オープンアウト
+Route::get('/openout', 'OpenOutController@index');
+Route::post('/openout', 'OpenOutController@create');
+Route::get('/openout/{id}', 'OpenOutController@show');
+
+
+
+
+// マスターアウト
+Route::get('/masterout',  function () {
+    return view('/masterout/masterout');
+});
+
+// パーフェクトモード
+Route::get('/perfect',  function () {
+    return view('/perfect/perfect');
+});
+
+
+// ログイン
+Auth::routes();
+
+
+// プロフィール系
+Route::get('/user/profile', 'OpenOutController@profile');
+Route::post('/user/profile', 'OpenOutController@profile');
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+// 各種ページ
 Route::get('/contact',  function () {
     return view('contact');
 });
@@ -29,26 +67,3 @@ Route::get('/privacy',  function () {
 Route::get('/service',  function () {
     return view('service');
 });
-
-Route::get('/arrange-data/top',  function () {
-    return view('/arrange-data/top');
-});
-
-Route::get('/problem/openout', 'OpenOutController@index');
-Route::post('/problem/openout', 'OpenOutController@create');
-// Route::resource('/problem/openout', 'OpenOutController', ['only' => ['create', 'store']]);
-
-Route::get('/problem/masterout',  function () {
-    return view('/problem/masterout');
-});
-
-Route::get('/problem/perfect',  function () {
-    return view('/problem/perfect');
-});
-
-Auth::routes();
-
-
-Route::get('/user/profile', 'OpenOutController@profile');
-Route::post('/user/profile', 'OpenOutController@profile');
-Route::get('/home', 'HomeController@index')->name('home');

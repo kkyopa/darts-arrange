@@ -1,9 +1,6 @@
 @extends('layouts.app')
 @section('content')
 
-
-
-
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -66,7 +63,7 @@
 </table>
 <br><hr>
 
-{{$openout->links()}}
+{{ $openout->render() }}
 
 </body>
 </html>
