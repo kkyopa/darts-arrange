@@ -42,6 +42,31 @@
     <button class="btn btn-success"> 送信 </button>
 </form>
 {{ csrf_field() }}
+<br><hr>
+
+<table class ="table">
+    <thead>
+        <tr>
+        <th scope="col">点数</th>
+        <th scope="col">1投目</th>
+        <th scope="col">2投目</th>
+        <th scope="col">3投目</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach($openout as $d)
+        <tr>
+        <th>{{ $d->arrangenumber }}</th>
+        <td>{{ $d->arrangefirst }}</td>
+        <td>{{ $d->arrangesecond }}</td>
+        <td>{{ $d->arrangethird }}</td>
+        </tr>
+    @endforeach
+    </tbody>
+</table>
+<br><hr>
+
+{{$openout->links()}}
 
 </body>
 </html>

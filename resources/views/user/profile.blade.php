@@ -7,12 +7,15 @@
 <div style="margin-top: 30px;">
 
 
-氏名
+名前
 {{ Auth::user()->name }}
-
-
+<br>
 メールアドレス
 {{ Auth::user()->email }}
+<br>
+
+{{ Auth::user()->rating }}
+フライト
 
 </div><br>
 
@@ -27,8 +30,6 @@
     <h4>{{ $d->arrangesecond }}</h4>
     ３投目<br>
     <h4>{{ $d->arrangethird }}</h4>
-    <h4>メモ</h4><br>
-    <h4>{{ $d->arrangememo }}</h4>
     <br><hr>
 @endforeach
 @endisset
@@ -52,7 +53,6 @@ for ( $i = 1; $i <= 180; $i++ ) {
     }
   echo '</tr>' . "\n";
 }
-
 ?>
 </table>
 
