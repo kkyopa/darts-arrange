@@ -58,7 +58,7 @@
         <td>{{ $d->arrangefirst }}</td>
         <td>{{ $d->arrangesecond }}</td>
         <td>{{ $d->arrangethird }}</td>
-        <td><a href="{{ url('/openout/show' , ['id' => $d->id ]) }}" class="btn btn-info">詳細</a></td>
+        <td><a href="{{ url('openout/show', ['id' => $d->id ]) }}">詳細</a></td>
         </tr>
     @endforeach
     </tbody>

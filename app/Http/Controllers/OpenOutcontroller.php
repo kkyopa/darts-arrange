@@ -18,15 +18,10 @@ class OpenOutcontroller extends Controller
         return view('openout/openout', compact('openout'));
     }
 
-    public function profile() {
-        $openout = OpenOut::all(); // 全データの取り出し
-        return view('/user/profile', ["openout" => $openout]);
-    }
-
     public function create(Request $request)
 {
     $arrange = new OpenOut;
-    $arrange->id = $request->arrangeid;
+    $arrange->id = $request->id;
     $arrange->arrangenumber = $request->arrangenumber;
     $arrange->arrangefirst = $request->arrangefirst;
     $arrange->arrangesecond = $request->arrangesecond;
@@ -49,4 +44,13 @@ class OpenOutcontroller extends Controller
         return view('/openout/show', compact('openout'));
     }
 
+
+    public function profile() {
+        $openout = OpenOut::all(); // 全データの取り出し
+        return view('/user/profile', ["openout" => $openout]);
+    }
+
+
 }
+
+
