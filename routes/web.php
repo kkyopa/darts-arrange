@@ -10,17 +10,13 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+// トップページ
 Route::get('/', function () {
     return view('index');
 });
 
-// Route::get('/welcome', function () {
-//     return view('welcome');
-// });
-
 
 // アレンジデータ
-
 Route::get('/arrange-data/top',  function () {
     return view('/arrange-data/top');
 });
@@ -30,6 +26,8 @@ Route::get('/arrange-data/top',  function () {
 Route::get('/openout', 'OpenOutController@index');
 Route::post('/openout', 'OpenOutController@create');
 Route::get('/openout/show/{id}', 'OpenOutController@show');
+Route::get('/openout/edit/{id}', 'OpenOutController@edit');
+Route::post('/openout/update/{id}', 'OpenOutController@update');
 
 
 
