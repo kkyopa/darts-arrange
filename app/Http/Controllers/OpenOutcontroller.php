@@ -59,7 +59,6 @@ class OpenOutcontroller extends Controller
     public function update(Request $request, $id)
     {
         $arrange = Openout::find($id);
-        // $arrange->id = $request->id;
         $arrange->arrangenumber = $request->arrangenumber;
         $arrange->arrangefirst = $request->arrangefirst;
         $arrange->arrangesecond = $request->arrangesecond;
@@ -69,12 +68,16 @@ class OpenOutcontroller extends Controller
         return redirect('openout');
     }
 
+    public function destroy(Request $request)
+    {
+        Openout::find($request->id)->delete();
+        return redirect('openout');
+    }
 
     public function profile() {
         $openout = OpenOut::all(); // 全データの取り出し
         return view('/user/profile', ["openout" => $openout]);
     }
-
 
 }
 

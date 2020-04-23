@@ -17,7 +17,13 @@
 {{ $openout->arrangememo }}
 
 <form method ="GET" action= "{{url('openout/edit', ['id' => $openout->id ])}}" >
-<input class="btn btn-info" type="submit" value="変更する">
+{{ csrf_field() }}
+    <input class="btn btn-info" type="submit" value="変更する">
+</form>
+
+<form method ="POST" action= "{{url('openout/destroy', ['id' => $openout->id ])}}" >
+{{ csrf_field() }}
+    <input type="submit" value="削除する" class="btn btn-danger" onclick='return confirm("本当に削除しますか?");'>
 </form>
 
 </body>

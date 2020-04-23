@@ -28,6 +28,7 @@ Route::post('/openout', 'OpenOutController@create');
 Route::get('/openout/show/{id}', 'OpenOutController@show');
 Route::get('/openout/edit/{id}', 'OpenOutController@edit');
 Route::post('/openout/update/{id}', 'OpenOutController@update');
+Route::post('/openout/destroy/{id}', 'OpenOutController@destroy');
 
 
 
