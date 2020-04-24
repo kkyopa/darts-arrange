@@ -9,11 +9,19 @@
 <body>
 
 <h1>更新画面</h1>
-
+スコア
 {{ $openout->arrangenumber }}
+<br>
+1投目
 {{ $openout->arrangefirst }}
+<br>
+2投目
 {{ $openout->arrangesecond }}
+<br>
+3投目
 {{ $openout->arrangethird }}
+<br>
+メモ
 {{ $openout->arrangememo }}
 
 

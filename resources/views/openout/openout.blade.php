@@ -21,7 +21,7 @@
 
     <input type="hidden" name="arrangeid" value="{{ Auth::user()->id }}"><br><br>
 
-    アレンジナンバー<br>
+    スコア<br>
     <input name="arrangenumber">
     <br>
     １投目<br>
@@ -33,7 +33,7 @@
     ３投目<br>
     <input name="arrangethird">
     <br>
-    アレンジメモ:<br>
+    アレンジメモ<br>
     <textarea name="arrangememo" rows="4" cols="40"></textarea>
     <br>
     <button class="btn btn-success"> 送信 </button>
@@ -44,7 +44,7 @@
 <table class ="table">
     <thead>
         <tr>
-        <th scope="col">点数</th>
+        <th scope="col">スコア</th>
         <th scope="col">1投目</th>
         <th scope="col">2投目</th>
         <th scope="col">3投目</th>
