@@ -20,12 +20,13 @@ class OpenOutcontroller extends Controller
     public function create(Request $request)
 {
     $arrange = new OpenOut;
+    $arrange->user_id = $request->user_id;
     $arrange->arrangenumber = $request->arrangenumber;
     $arrange->arrangefirst = $request->arrangefirst;
     $arrange->arrangesecond = $request->arrangesecond;
     $arrange->arrangethird = $request->arrangethird;
     $arrange->arrangememo = $request->arrangememo;
-    Openout::insert(["arrangenumber" => $arrange->arrangenumber, "arrangefirst" => $arrange->arrangefirst, "arrangesecond" => $arrange->arrangesecond, "arrangethird" => $arrange->arrangethird, "arrangememo" => $arrange->arrangememo]);
+    Openout::insert(["user_id" => $arrange->user_id, "arrangenumber" => $arrange->arrangenumber, "arrangefirst" => $arrange->arrangefirst, "arrangesecond" => $arrange->arrangesecond, "arrangethird" => $arrange->arrangethird, "arrangememo" => $arrange->arrangememo]);
     $openout = OpenOut::all(); // 全データの取り出し
     return redirect('openout');
     // $arrangenumber = $request->input('arrangenumber');

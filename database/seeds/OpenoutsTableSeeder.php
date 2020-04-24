@@ -13,6 +13,7 @@ class OpenoutTableSeeder extends Seeder
     {
         $param = [
             'id' => 1,
+            'user_id' => 1,
             'arrangenumber' => '180',
             'arrangefirst' => 60,
             'arrangesecond' => 60,

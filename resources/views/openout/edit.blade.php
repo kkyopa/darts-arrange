@@ -28,7 +28,7 @@
 
 <form method="POST" action="{{ url('openout/update', ['id' => $openout->id ]) }}">
 {{ csrf_field() }}
-<input type="hidden" name="arrangeid" value="{{ Auth::user()->id }}"><br><br>
+<input type="hidden" name="user_id" value="{{ Auth::user()->id }}"><br><br>
 
     アレンジナンバー<br>
     <input name="arrangenumber" value="{{ $openout->arrangenumber }}">

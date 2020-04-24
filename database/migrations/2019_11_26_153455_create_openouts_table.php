@@ -15,6 +15,8 @@ class CreateOpenoutsTable extends Migration
     {
         Schema::create('openouts', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->integer('arrangenumber');
             $table->integer('arrangefirst')->default(0);
             $table->integer('arrangesecond')->default(0);

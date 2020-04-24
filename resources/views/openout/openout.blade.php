@@ -19,7 +19,7 @@
 <form action="openout" method="POST">
 {{ csrf_field() }}
 
-    <input type="hidden" name="arrangeid" value="{{ Auth::user()->id }}"><br><br>
+    <input type="hidden" name="user_id" value="{{ Auth::user()->id }}"><br><br>
 
     スコア<br>
     <input name="arrangenumber">
