@@ -15,7 +15,7 @@ class OpenOutcontroller extends Controller
         $query = DB::table('openouts');
         $query->select('id','user_id', 'arrangenumber', 'arrangefirst', 'arrangesecond', 'arrangethird', 'arrangememo');
         $query->orderBy('arrangenumber', 'asc');
-        $openout = $query->paginate(10);
+        $openout = $query->paginate(99);
         return view('openout/openout', compact('openout','authUser'));
     }
 
