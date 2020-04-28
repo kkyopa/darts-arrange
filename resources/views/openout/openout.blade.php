@@ -52,16 +52,18 @@
         </tr>
     </thead>
     <tbody>
-    @foreach($openout as $d)
-        <tr>
-        <th>{{ $d->arrangenumber }}</th>
-        <td>{{ $d->arrangefirst }}</td>
-        <td>{{ $d->arrangesecond }}</td>
-        <td>{{ $d->arrangethird }}</td>
-        <td><a href="{{ url('openout/show', ['id' => $d->id ]) }}" class="btn btn-info" >詳細</a></td>
-        </tr>
-    @endforeach
-    </tbody>
+        @foreach($openout as $d)
+            @if($authUser->id === $d->user_id)
+                <tr>
+                <th>{{ $d->arrangenumber }}</th>
+                <td>{{ $d->arrangefirst }}</td>
+                <td>{{ $d->arrangesecond }}</td>
+                <td>{{ $d->arrangethird }}</td>
+                <td><a href="{{ url('openout/show', ['id' => $d->id ]) }}" class="btn btn-info" >詳細</a></td>
+            </tr>
+            @endif
+        @endforeach
+</tbody>
 </table>
 <br><hr>
 

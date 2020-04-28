@@ -5,16 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Openout;
 use App\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class OpenOutcontroller extends Controller
 {
     public function index() {
+        $authUser = Auth::user();
         $query = DB::table('openouts');
-        $query->select('id', 'arrangenumber', 'arrangefirst', 'arrangesecond', 'arrangethird', 'arrangememo');
+        $query->select('id','user_id', 'arrangenumber', 'arrangefirst', 'arrangesecond', 'arrangethird', 'arrangememo');
         $query->orderBy('arrangenumber', 'asc');
         $openout = $query->paginate(10);
-        return view('openout/openout', compact('openout'));
+        return view('openout/openout', compact('openout','authUser'));
     }
 
     public function create(Request $request)
