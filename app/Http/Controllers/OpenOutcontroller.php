@@ -28,6 +28,9 @@ class OpenOutcontroller extends Controller
     $arrange->arrangesecond = $request->arrangesecond;
     $arrange->arrangethird = $request->arrangethird;
     $arrange->arrangememo = $request->arrangememo;
+    // if (is_null($arrange->arrangefirst)) {
+    //     $arrange->arrangefirst = 0;
+    //   }
     Openout::insert(["user_id" => $arrange->user_id, "arrangenumber" => $arrange->arrangenumber, "arrangefirst" => $arrange->arrangefirst, "arrangesecond" => $arrange->arrangesecond, "arrangethird" => $arrange->arrangethird, "arrangememo" => $arrange->arrangememo]);
     $openout = OpenOut::all(); // 全データの取り出し
     return redirect('openout');

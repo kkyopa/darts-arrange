@@ -18,9 +18,9 @@ class CreateOpenoutsTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('arrangenumber');
-            $table->integer('arrangefirst')->default(0);
-            $table->integer('arrangesecond')->default(0);
-            $table->integer('arrangethird')->default(0);
+            $table->string('arrangefirst')->nullable();
+            $table->string('arrangesecond')->nullable();
+            $table->string('arrangethird')->nullable();
             $table->string('arrangememo')->nullable();
             $table->timestamps();
         });
