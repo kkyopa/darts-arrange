@@ -7,6 +7,16 @@
             <div class="panel panel-default">
                 <div class="panel-heading">新規登録</div>
 
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{$error}}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
@@ -17,11 +27,20 @@
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
 
-                                @if ($errors->has('name'))
+                                <!-- @if ($errors->has('name'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
-                                @endif
+                                @endif -->
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="rating-confirm" class="col-md-4 control-label">フライト</label>
+                            <div class="col-md-6">
+                                <input type="radio" name="rating" value="A">Aフライト</input>
+                                <input type="radio" name="rating" value="B">Bフライト</input>
+                                <input type="radio" name="rating" value="C">Cフライト</input>
                             </div>
                         </div>
 
@@ -45,11 +64,13 @@
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control" name="password" required>
 
+                                <!--
                                 @if ($errors->has('password'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
-                                @endif
+                                @endif -->
+
                             </div>
                         </div>
 

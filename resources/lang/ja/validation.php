@@ -99,17 +99,20 @@ return [
     // |
     // */
 
-    // 'custom' => [
-    //     'attribute-name' => [
-    //         'rule-name' => 'custom-message',
-    //     ],
-    //     'email' => [
-    //         'required' => 'メールアドレスを入力してください',
-    //     ],
-    //     'password' => [
-    //         'required' => 'パスワードを入力してください',
-    //     ],
-    // ],
+    'custom' => [
+        // 'attribute-name' => [
+        //     'rule-name' => 'custom-message',
+        // ],
+        // 'email' => [
+        //     'required' => 'メールアドレスを入力してください',
+        // ],
+        // 'password' => [
+        //     'required' => 'パスワードを入力してください',
+        // ],
+        'rating' => [
+            'required' => '入力してください',
+        ],
+    ],
 
     // /*
     // |--------------------------------------------------------------------------
@@ -178,7 +181,7 @@ return [
         'not_in'               => ':attributeには:valuesのうちいずれとも異なる値を指定してください。',
         'numeric'              => ':attributeには数値を指定してください。',
         'present'              => ':attributeには現在時刻を指定してください。',
-        'regex'                => '正しい形式の:attributeを指定してください。',
+        'regex'                => '正しい形式の:attributeを指定してください。入力説明の➁を参考に入力お願いします。',
         'required'             => ':attributeは必須です。',
         'required_if'          => ':otherが:valueの時:attributeは必須です。',
         'required_unless'      => ':otherが:values以外の時:attributeは必須です。',
@@ -206,7 +209,11 @@ return [
         ],
 
         'attributes' => [
-            // 'email' => 'メールアドレス',
+            'rating' => 'フライト',
+            'arrangenumber' => 'スコア',
+            'arrangefirst' => '１投目',
+            'arrangesecond' =>'２投目',
+            'arrangethird' => '３投目',
             // 'password' => 'パスワード',
             // 'password_confirmation' => 'パスワード（確認）',
             // 'name' => 'ユーザー名'

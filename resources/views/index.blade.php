@@ -106,9 +106,9 @@
                         <p>オープンアウト編・マスターアウト編・パーフェクト編３種類ございます。空いた時間に気軽に対策してください</p>
                     </div>
                     <div class="arrengeproblem">
-                        <a href="{{ url('problem/openout') }}" class="btn-sticky">オープンアウト編</a>
-                        <a href="{{ url('problem/masterout') }}" class="btn-sticky">マスターアウト編</a>
-                        <a href="{{ url('problem/perfect') }}" class="btn-sticky">パーフェクト編</a>
+                        <a href="{{ url('/openout') }}" class="btn-sticky">オープンアウト編</a>
+                        <a href="{{ url('/masterout') }}" class="btn-sticky">マスターアウト編</a>
+                        <a href="{{ url('/perfect') }}" class="btn-sticky">パーフェクト編</a>
                     </div>
                 @else
                 <div class="content">
