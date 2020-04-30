@@ -1,6 +1,8 @@
 <?php
 
+use App\Openout;
 use Illuminate\Database\Seeder;
+use App\User;
 
 class OpenoutTableSeeder extends Seeder
 {
@@ -11,15 +13,6 @@ class OpenoutTableSeeder extends Seeder
      */
     public function run()
     {
-        $param = [
-            'id' => 1,
-            'user_id' => 1,
-            'arrangenumber' => '180',
-            'arrangefirst' => 60,
-            'arrangesecond' => 60,
-            'arrangethird' => 60,
-            'arrangememo' => 'テスト',
-          ];
-        DB::table('openouts')->insert($param);
+        factory(Openout::class, 3)->create();
     }
 }
