@@ -13,25 +13,33 @@
 <h3>オープンアウト入力説明</h3>
 <br>
 <p>①スコアは任意の数字を入力</p>
-<p>➁スコアを入力する際、最初の文字は「TかDかSを入力した上数字を入力してください（BULLの場合はBULLと入力）</p>
+<p>②スコアを入力する際、最初の文字は「TかDかSの大文字を選択し入力した上で大文字の数字（１~２０）を入力してください（BULLの場合はBULLと入力）</p>
 <p>③メモが必要な場合はアレンジメモに記述</p>
 <p>④アレンジメモを確認したい、アレンジの変更、削除は詳細ボタンで変更できます。</p>
 <br>
 <p>例:</p>
 
-<input name="ex_arrangenumber" value="164">
+<input name="ex_arrangenumber" value="１６４">
 スコア<br>
 <input name="ex_arrangefirst" value="BULL">
 １投目<br>
-<input name="ex_arrangesecond" value="T60">
+<input name="ex_arrangesecond" value="T２０">
 ２投目<br>
-<input name="ex_arrangethird" value="T54">
+<input name="ex_arrangethird" value="T１８">
 ３投目<br>
 <textarea name="ex_arrangememo" rows="4" cols="40" value="まずはBULLから!!"></textarea>
 アレンジメモ<br><br><br>
 
 
 <h3>さっそく登録してみよう</h3>
+
+@if(count($errors) > 0)
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+@endif
 
 <form action="openout" method="POST">
 {{ csrf_field() }}

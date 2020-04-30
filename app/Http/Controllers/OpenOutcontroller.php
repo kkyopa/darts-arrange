@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\OpenoutRequest;
 use App\Openout;
 use App\User;
 use Illuminate\Support\Facades\Auth;
@@ -19,7 +20,7 @@ class OpenOutcontroller extends Controller
         return view('openout/openout', compact('openout','authUser'));
     }
 
-    public function create(Request $request)
+    public function create(OpenoutRequest $request)
 {
     $arrange = new OpenOut;
     $arrange->user_id = $request->user_id;
@@ -62,7 +63,7 @@ class OpenOutcontroller extends Controller
     }
 
 
-    public function update(Request $request, $id)
+    public function update(OpenoutRequest $request, $id)
     {
         $arrange = Openout::find($id);
         $arrange->arrangenumber = $request->arrangenumber;
