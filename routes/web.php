@@ -30,9 +30,6 @@ Route::get('/openout/edit/{id}', 'OpenOutController@edit');
 Route::post('/openout/update/{id}', 'OpenOutController@update');
 Route::post('/openout/destroy/{id}', 'OpenOutController@destroy');
 
-
-
-
 // マスターアウト
 Route::get('/masterout', 'MasterOutController@index');
 Route::post('/masterout', 'MasterOutController@create');
