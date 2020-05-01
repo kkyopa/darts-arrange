@@ -35,5 +35,34 @@ class MasterOutController extends Controller
 
     }
 
+    public function show($id){
+        $masterout = Masterout::find($id);
+        return view('/masterout/show', compact('masterout'));
+    }
+
+    public function edit($id){
+        $masterout = Masterout::find($id);
+        return view('/masterout/show', compact('masterout'));
+    }
+
+
+    public function update(MasteroutRequest $request, $id)
+    {
+        $arrange = Masterout::find($id);
+        $arrange->arrangenumber = $request->arrangenumber;
+        $arrange->arrangefirst = $request->arrangefirst;
+        $arrange->arrangesecond = $request->arrangesecond;
+        $arrange->arrangethird = $request->arrangethird;
+        $arrange->arrangememo = $request->arrangememo;
+        $arrange->save();
+        return redirect('masterout');
+    }
+
+    public function destroy(Request $request)
+    {
+        Masterout::find($request->id)->delete();
+        return redirect('masterout');
+    }
+
 }
 
