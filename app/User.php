@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Openout;
+use App\Masterout;
 
 class User extends Authenticatable
 {
@@ -31,5 +32,10 @@ class User extends Authenticatable
     public function openouts() // 複数形
     {
         return $this->hasMany('App\Openout');
+    }
+
+    public function masterouts() // 複数形
+    {
+        return $this->hasMany('App\Masterout');
     }
 }
