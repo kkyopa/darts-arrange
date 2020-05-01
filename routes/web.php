@@ -34,14 +34,20 @@ Route::post('/openout/destroy/{id}', 'OpenOutController@destroy');
 
 
 // マスターアウト
-Route::get('/masterout',  function () {
-    return view('/masterout/masterout');
-});
+Route::get('/masterout', 'MasterOutController@index');
+Route::post('/masterout', 'MasterOutController@create');
+Route::get('/masterout/show/{id}', 'MasterOutController@show');
+Route::get('/masterout/edit/{id}', 'MasterOutController@edit');
+Route::post('/masterout/update/{id}', 'MasterOutController@update');
+Route::post('/masterout/destroy/{id}', 'MasterOutController@destroy');
 
 // パーフェクトモード
-Route::get('/perfect',  function () {
-    return view('/perfect/perfect');
-});
+Route::get('/perfect', 'PerfectController@index');
+Route::post('/perfect', 'PerfectController@create');
+Route::get('/perfect/show/{id}', 'PerfectController@show');
+Route::get('/perfect/edit/{id}', 'PerfectController@edit');
+Route::post('/perfect/update/{id}', 'PerfectController@update');
+Route::post('/perfect/destroy/{id}', 'PerfectController@destroy');
 
 
 // ログイン
