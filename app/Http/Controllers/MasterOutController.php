@@ -42,7 +42,7 @@ class MasterOutController extends Controller
 
     public function edit($id){
         $masterout = Masterout::find($id);
-        return view('/masterout/show', compact('masterout'));
+        return view('/masterout/edit', compact('masterout'));
     }
 
 
