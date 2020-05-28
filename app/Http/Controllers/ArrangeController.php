@@ -6,5 +6,7 @@ use Illuminate\Http\Request;
 
 class ArrangeController extends Controller
 {
-    //
+    public function index() {
+        return view('/arrange-data/top');
+    }
 }
