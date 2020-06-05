@@ -26,9 +26,9 @@ class OpenoutRequest extends FormRequest
     {
         return [
             'arrangenumber' => 'required|max:4',
-            'arrangefirst'=>['required','min:2','max:4','regex:/(S１|S２|S３|S４|S５|S６|S７|S８|S９|S１０|S１１|S１２|S１３|S１４|S１５|S１６|S１７|S１８|S１９|S２０|D１|D２|D３|D４|D５|D６|D７|D８|D９|D１０|D１１|D１２|D１３|D１４|D１５|D１６|D１７|D１８|D１９|D２０|T１|T２|T３|T４|T５|T６|T７|T８|T９|T１０|T１１|T１２|T１３|T１４|T１５|T１６|T１７|T１８|T１９|T２０|BULL)/'],
-            'arrangesecond'=>['nullable','min:2','max:4','regex:/(S１|S２|S３|S４|S５|S６|S７|S８|S９|S１０|S１１|S１２|S１３|S１４|S１５|S１６|S１７|S１８|S１９|S２０|D１|D２|D３|D４|D５|D６|D７|D８|D９|D１０|D１１|D１２|D１３|D１４|D１５|D１６|D１７|D１８|D１９|D２０|T１|T２|T３|T４|T５|T６|T７|T８|T９|T１０|T１１|T１２|T１３|T１４|T１５|T１６|T１７|T１８|T１９|T２０|BULL)/'],
-            'arrangethird'=>['nullable','min:2','max:4','regex:/(S１|S２|S３|S４|S５|S６|S７|S８|S９|S１０|S１１|S１２|S１３|S１４|S１５|S１６|S１７|S１８|S１９|S２０|D１|D２|D３|D４|D５|D６|D７|D８|D９|D１０|D１１|D１２|D１３|D１４|D１５|D１６|D１７|D１８|D１９|D２０|T１|T２|T３|T４|T５|T６|T７|T８|T９|T１０|T１１|T１２|T１３|T１４|T１５|T１６|T１７|T１８|T１９|T２０|BULL)/'],
+            'arrangefirst'=>['required','min:2','max:4','regex:/(S1|S2|S3|S4|S5|S6|S7|S8|S9|S10|S11|S12|S13|S14|S15|S16|S17|S18|S19|S20|D1|D2|D3|D4|D5|D6|D7|D8|D9|D10|D11|D12|D13|D14|D15|D16|D17|D18|D19|D20|T1|T2|T3|T4|T5|T6|T7|T8|T9|T10|T11|T12|T13|T14|T15|T16|T17|T18|T19|T20|BULL)/'],
+            'arrangesecond'=>['required','min:2','max:4','regex:/(S1|S2|S3|S4|S5|S6|S7|S8|S9|S10|S11|S12|S13|S14|S15|S16|S17|S18|S19|S20|D1|D2|D3|D4|D5|D6|D7|D8|D9|D10|D11|D12|D13|D14|D15|D16|D17|D18|D19|D20|T1|T2|T3|T4|T5|T6|T7|T8|T9|T10|T11|T12|T13|T14|T15|T16|T17|T18|T19|T20|BULL)/'],
+            'arrangethird'=>['required','min:2','max:4','regex:/(S1|S2|S3|S4|S5|S6|S7|S8|S9|S10|S11|S12|S13|S14|S15|S16|S17|S18|S19|S20|D1|D2|D3|D4|D5|D6|D7|D8|D9|D10|D11|D12|D13|D14|D15|D16|D17|D18|D19|D20|T1|T2|T3|T4|T5|T6|T7|T8|T9|T10|T11|T12|T13|T14|T15|T16|T17|T18|T19|T20|BULL)/'],
         ];
     }
 }
