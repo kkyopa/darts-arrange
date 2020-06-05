@@ -26,31 +26,34 @@ class OpenOutcontroller extends Controller
     $arrange->user_id = $request->user_id;
     $arrange->arrangenumber = $request->arrangenumber;
     $arrange->arrangefirst = $request->arrangefirst;
+    $arrange->first_score = self::changeScore($request->arrangefirst);
     $arrange->arrangesecond = $request->arrangesecond;
+    $arrange->second_score = self::changeScore($request->arrangesecond);
     $arrange->arrangethird = $request->arrangethird;
+    $arrange->third_score = self::changeScore($request->arrangethird);
     $arrange->arrangememo = $request->arrangememo;
-    // if (is_null($arrange->arrangefirst)) {
-    //     $arrange->arrangefirst = 0;
-    //   }
-    Openout::insert(["user_id" => $arrange->user_id, "arrangenumber" => $arrange->arrangenumber, "arrangefirst" => $arrange->arrangefirst, "arrangesecond" => $arrange->arrangesecond, "arrangethird" => $arrange->arrangethird, "arrangememo" => $arrange->arrangememo]);
-    $openout = OpenOut::all(); // 全データの取り出し
+    $arrange->save();
+
     return redirect('openout');
-    // $arrangenumber = $request->input('arrangenumber');
-    // $arrangefirst = $request->input('arrangefirst');
-    // $arrangesecond = $request->input('arrangesecond');
-    // $arrangethird = $request->input('arrangethird');
-    // $arrangememo = $request->input('arrangememo');
-    // Openout::insert(["arrangenumber" => $arrangenumber, "arrangefirst" => $arrangefirst, "arrangesecond" => $arrangesecond, "arrangethird" => $arrangethird, "arrangememo" => $arrangememo]);
-
-    // 全件取得するコードを書くとメゾットがないと言われるから条件を絞ればって書いてあったけど...単純にpaginateがなかっただけだったかも
-
-    // return view('openout/openout', ["openout" => $openout]);
-    // $query = DB::table('openouts');
-    // $query->select('id', 'arrangenumber', 'arrangefirst', 'arrangesecond', 'arrangethird', 'arrangememo');
-    // $query->orderBy('arrangenumber', 'asc');
-    // $openout = $query->paginate(10);
-    // return view('openout/openout', compact('openout'));
 }
+
+private static function changeScore($comment) {
+    $first_string = substr($comment, 0, 1);
+    $first_number = trim($comment, $first_string);
+    $first_number = (intval($first_number));
+    if ($first_string === 'B') {
+      return 50;
+    } elseif($first_string === 'T') {
+      return $first_number * 3;
+    } elseif($first_string === 'D') {
+      return $first_number * 2;
+    } elseif($first_string === 'S') {
+      return $first_number * 1;
+    } else {
+      $first_string = 0;
+    }
+  }
+
 
     public function show($id){
         $openout = Openout::find($id);

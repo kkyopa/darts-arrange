@@ -19,9 +19,12 @@ class ArrangeOpenController extends Controller
             $query->where('arrangenumber', 'LIKE', "{$keyword}");
         }
 
-        $query->select('id','user_id', 'arrangenumber', 'arrangefirst', 'arrangesecond', 'arrangethird', 'arrangememo');
-        $query->orderBy('arrangenumber', 'asc');
+        $query->select('id','user_id', 'arrangenumber', 'arrangefirst', 'arrangesecond', 'arrangethird', 'arrangememo',DB::raw('count(*) as count'));
+        $query->groupBy('arrangefirst', 'arrangesecond', 'arrangethird');
+        // $query->orderBy('arrangenumber', 'asc');
+        $query->orderByRaw('COUNT(*) DESC');
         $openout = $query->paginate(10);
+        // dd($openout);
         return view('/arrange-data/openout_data', compact('openout','authUser','keyword'));
     }
 }

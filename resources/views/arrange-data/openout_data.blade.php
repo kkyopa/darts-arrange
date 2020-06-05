@@ -29,7 +29,7 @@
 <table class ="table">
     <thead>
         <tr>
-        <th scope="col">スコア</th>
+        <th scope="col">スコア (件数)</th>
         <th scope="col">1投目</th>
         <th scope="col">2投目</th>
         <th scope="col">3投目</th>
@@ -40,7 +40,7 @@
     @if($openout->count())
         @foreach($openout as $d)
                 <tr>
-                <th>{{ $d->arrangenumber }}</th>
+                <th>{{ $d->arrangenumber }}({{ $d->count}})</th>
                 <td>{{ $d->arrangefirst }}</td>
                 <td>{{ $d->arrangesecond }}</td>
                 <td>{{ $d->arrangethird }}</td>
