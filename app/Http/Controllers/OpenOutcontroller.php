@@ -54,7 +54,6 @@ private static function changeScore($comment) {
     }
   }
 
-
     public function show($id){
         $openout = Openout::find($id);
         return view('/openout/show', compact('openout'));
