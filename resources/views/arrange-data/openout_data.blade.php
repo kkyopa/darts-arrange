@@ -21,7 +21,12 @@
 <br>
 <form method="GET" action="{{ url('../arrange-data/openout_data') }}" class="form-inline my-2 my-lg-0">
     <h5>スコア</h5>
-    <p><input type="text" class="form-control mr-sm-2" name="keyword" value="{{$keyword}}"></p>
+    <p><input type="text" class="form-control mr-sm-2" name="keyword" value="{{$keyword}}"></p><br>
+    <p>フライト<br>
+    <input type="radio" name="q1" value="{{$rating}}"> Aフライト
+    <input type="radio" name="q1" value="{{$rating}}"> Bフライト
+    <input type="radio" name="q1" value="{{$rating}}"> Cフライト
+    </p><br>
     <p><input class="btn btn-outline-success my-2 my-sm-0" type="submit" value="検索"></p>
 </form>
 

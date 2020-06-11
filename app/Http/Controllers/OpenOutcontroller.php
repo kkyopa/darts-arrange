@@ -38,6 +38,7 @@ class OpenOutcontroller extends Controller
 }
 
 private static function changeScore($comment) {
+    $comment = trim($comment);
     $first_string = substr($comment, 0, 1);
     $first_number = trim($comment, $first_string);
     $first_number = (intval($first_number));
