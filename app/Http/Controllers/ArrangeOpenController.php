@@ -20,6 +20,12 @@ class ArrangeOpenController extends Controller
             $query->where('arrangenumber', 'LIKE', "{$keyword}");
         }
 
+        if (!empty($rating)) {
+            $query->whereHas('user', function ($query) use ($rating) {
+                $query->where('rating', $rating);
+            });
+        }
+
         // ->orWhere('rating', 'LIKE', "%$rating%")
         // $post = User::with('rating')->find(1);
         // return $post;
@@ -30,7 +36,7 @@ class ArrangeOpenController extends Controller
         // $query->orderBy('arrangenumber', 'asc');
         $query->orderByRaw('COUNT(*) DESC');
         $openout = $query->paginate(10);
-        dd($openout);
+        // dd($openout);
         return view('/arrange-data/openout_data', compact('openout','authUser','keyword','rating'));
     }
 }

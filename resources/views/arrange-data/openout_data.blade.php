@@ -23,9 +23,9 @@
     <h5>スコア</h5>
     <p><input type="text" class="form-control mr-sm-2" name="keyword" value="{{$keyword}}"></p><br>
     <p>フライト<br>
-    <input type="radio" name="q1" value="{{$rating}}"> Aフライト
-    <input type="radio" name="q1" value="{{$rating}}"> Bフライト
-    <input type="radio" name="q1" value="{{$rating}}"> Cフライト
+    <input type="radio" name="rating" value="A"> Aフライト
+    <input type="radio" name="rating" value="B"> Bフライト
+    <input type="radio" name="rating" value="C"> Cフライト
     </p><br>
     <p><input class="btn btn-outline-success my-2 my-sm-0" type="submit" value="検索"></p>
 </form>
