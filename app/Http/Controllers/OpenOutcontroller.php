@@ -24,34 +24,38 @@ class OpenOutcontroller extends Controller
 {
     $arrange = new OpenOut;
     $arrange->user_id = $request->user_id;
-    $arrange->arrangenumber = $request->arrangenumber;
-    $arrange->arrangefirst = $request->arrangefirst;
-    $arrange->first_score = self::changeScore($request->arrangefirst);
-    $arrange->arrangesecond = $request->arrangesecond;
-    $arrange->second_score = self::changeScore($request->arrangesecond);
-    $arrange->arrangethird = $request->arrangethird;
-    $arrange->third_score = self::changeScore($request->arrangethird);
+    $arrange->arrangefirst = self::createScore($request->arrangefirst_type, $request->arrangefirst_score);
+    $arrange->first_score = self::changeScore($request->arrangefirst_type, $request->arrangefirst_score);
+    $arrange->arrangesecond = self::createScore($request->arrangesecond_type, $request->arrangesecond_score);
+    $arrange->second_score = self::changeScore($request->arrangesecond_type, $request->arrangesecond_score);
+    $arrange->arrangethird = self::createScore($request->arrangethird_type, $request->arrangethird_score);
+    $arrange->third_score = self::changeScore($request->arrangethird_type, $request->arrangethird_score);
+    $arrange->arrangenumber = $arrange->first_score + $arrange->second_score + $arrange->third_score;
     $arrange->arrangememo = $request->arrangememo;
     $arrange->save();
 
     return redirect('openout');
 }
 
-private static function changeScore($comment) {
-    $comment = trim($comment);
-    $first_string = substr($comment, 0, 1);
-    $first_number = trim($comment, $first_string);
-    $first_number = (intval($first_number));
-    if ($first_string === 'B') {
+private static function changeScore($type, $score) {
+    if ($type === 'BULL') {
       return 50;
-    } elseif($first_string === 'T') {
-      return $first_number * 3;
-    } elseif($first_string === 'D') {
-      return $first_number * 2;
-    } elseif($first_string === 'S') {
-      return $first_number * 1;
+    } elseif($type === 'T') {
+      return $score * 3;
+    } elseif($type === 'D') {
+      return $score * 2;
+    } elseif($type === 'S') {
+      return $score * 1;
     } else {
-      $first_string = 0;
+        return 0;
+    }
+  }
+
+  private static function createScore($type, $score) {
+    if($type  == "BULL") {
+      return $type;
+    } else {
+      return $type . $score;
     }
   }
 

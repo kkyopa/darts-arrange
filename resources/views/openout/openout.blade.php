@@ -46,7 +46,7 @@
 
     <input type="hidden" name="user_id" value="{{ Auth::user()->id }}"><br><br>
 
-    スコア<br>
+    <!-- スコア<br>
     <input name="arrangenumber">
     <br>
     １投目<br>
@@ -57,7 +57,49 @@
     <br>
     ３投目<br>
     <input name="arrangethird">
-    <br>
+    <br> -->
+
+
+    <div>
+        <input type="radio" name="arrangefirst_type" value="BULL">BULL
+        <input type="radio" name="arrangefirst_type" value="T">トリプル
+        <input type="radio" name="arrangefirst_type" value="D">ダブル
+        <input type="radio" name="arrangefirst_type" value="S">シングル
+
+        <select name="arrangefirst_score">
+            @for($i = 1; $i <= 20; $i++)
+                <option value="{{$i}}">{{$i}}</option>
+            @endfor
+        </select>
+    </div>
+
+    <div>
+        <input type="radio" name="arrangesecond_type" value="BULL">BULL
+        <input type="radio" name="arrangesecond_type" value="T">トリプル
+        <input type="radio" name="arrangesecond_type" value="D">ダブル
+        <input type="radio" name="arrangesecond_type" value="S">シングル
+
+        <select name="arrangesecond_score">
+            @for($i = 1; $i <= 20; $i++)
+                <option value="{{$i}}">{{$i}}</option>
+            @endfor
+        </select>
+    </div>
+
+    <div>
+        <input type="radio" name="arrangethird_type" value="BULL">BULL
+        <input type="radio" name="arrangethird_type" value="T">トリプル
+        <input type="radio" name="arrangethird_type" value="D">ダブル
+        <input type="radio" name="arrangethird_type" value="S">シングル
+
+        <select name="arrangethird_score">
+            @for($i = 1; $i <= 20; $i++)
+                <option value="{{$i}}">{{$i}}</option>
+            @endfor
+        </select>
+    </div><br>
+
+
     アレンジメモ<br>
     <textarea name="arrangememo" rows="4" cols="40"></textarea>
     <br>
