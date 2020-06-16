@@ -19,17 +19,11 @@ Route::get('/', function () {
 // アレンジデータ
 
 Route::get('/arrange-data/top', 'arrangeController@index');
-
 Route::get('/arrange-data/openout_data', 'arrangeopenController@index');
+Route::get('/arrange-data/masterout_data', 'arrangemasterController@index');
+Route::get('/arrange-data/perfect_data', 'arrangeperfectController@index');
 
 
-Route::get('/arrange-data/masterout_data', function () {
-    return view('/arrange-data/masterout_data');
-});
-
-Route::get('/arrange-data/perfect_data', function () {
-    return view('/arrange-data/perfect_data');
-});
 
 // オープンアウト
 Route::get('/openout', 'OpenOutController@index');

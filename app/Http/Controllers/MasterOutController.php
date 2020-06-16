@@ -49,7 +49,7 @@ class MasterOutController extends Controller
             return 0;
         }
       }
-    
+
       private static function createScore($type, $score) {
         if($type  == "BULL") {
           return $type;
