@@ -33,7 +33,6 @@ class OpenOutcontroller extends Controller
     $arrange->arrangenumber = $arrange->first_score + $arrange->second_score + $arrange->third_score;
     $arrange->arrangememo = $request->arrangememo;
     $arrange->save();
-
     return redirect('openout');
 }
 
