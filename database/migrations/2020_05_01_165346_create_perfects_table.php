@@ -19,13 +19,15 @@ class CreatePerfectsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('arrangenumber');
             $table->string('arrangefirst')->nullable();
+            $table->integer('first_score')->nullable();
             $table->string('arrangesecond')->nullable();
+            $table->integer('second_score')->nullable();
             $table->string('arrangethird')->nullable();
+            $table->integer('third_score')->nullable();
             $table->string('arrangememo')->nullable();
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *
