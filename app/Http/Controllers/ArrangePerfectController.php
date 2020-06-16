@@ -31,7 +31,7 @@ class ArrangePerfectController extends Controller
         $query->groupBy('arrangefirst', 'arrangesecond', 'arrangethird');
         // $query->orderBy('arrangenumber', 'asc');
         $query->orderByRaw('COUNT(*) DESC');
-        $openout = $query->paginate(10);
-        return view('/arrange-data/openout_data', compact('openout','authUser','keyword','rating'));
+        $perfect = $query->paginate(10);
+        return view('/arrange-data/perfect_data', compact('perfect','authUser','keyword','rating'));
     }
 }

@@ -19,7 +19,7 @@
 
 <h1>検索</h1>
 <br>
-<form method="GET" action="{{ url('../arrange-data/openout_data') }}" class="form-inline my-2 my-lg-0">
+<form method="GET" action="{{ url('../arrange-data/perfect_data') }}" class="form-inline my-2 my-lg-0">
     <h5>スコア</h5>
     <p><input type="text" class="form-control mr-sm-2" name="keyword" value="{{$keyword}}"></p><br>
     <p>フライト<br>
@@ -42,14 +42,13 @@
         </tr>
     </thead>
     <tbody>
-    @if($openout->count())
-        @foreach($openout as $d)
+    @if($perfect->count())
+        @foreach($perfect as $d)
                 <tr>
                 <th>{{ $d->arrangenumber }}({{ $d->count}})</th>
                 <td>{{ $d->arrangefirst }}</td>
                 <td>{{ $d->arrangesecond }}</td>
                 <td>{{ $d->arrangethird }}</td>
-                <td><a href="{{ url('openout/show', ['id' => $d->id ]) }}" class="btn btn-info" >詳細</a></td>
             </tr>
         @endforeach
         @else
@@ -59,7 +58,7 @@
 </table>
 <br><hr>
 
-{{ $openout->render() }}
+{{ $perfect->render() }}
 
 </body>
 </html>
