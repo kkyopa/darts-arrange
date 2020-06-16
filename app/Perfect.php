@@ -10,6 +10,6 @@ class Perfect extends Model
 
     public function user() // 単数形
     {
-        return $this->belongsTo('App\User');
+        return $this->hasOne('App\User', 'id', 'user_id');
     }
 }

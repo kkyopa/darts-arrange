@@ -32,7 +32,6 @@ class ArrangeOpenController extends Controller
         // $query->orderBy('arrangenumber', 'asc');
         $query->orderByRaw('COUNT(*) DESC');
         $openout = $query->paginate(10);
-        dd($openout);
         return view('/arrange-data/openout_data', compact('openout','authUser','keyword','rating'));
     }
 }
