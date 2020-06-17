@@ -54,7 +54,7 @@
         <input type="radio" name="arrangefirst_type" value="S">シングル
 
         <select name="arrangefirst_score">
-            @for($i = 1; $i <= 20; $i++)
+            @for($i = 0; $i <= 20; $i++)
                 <option value="{{$i}}">{{$i}}</option>
             @endfor
         </select>
@@ -67,7 +67,7 @@
         <input type="radio" name="arrangesecond_type" value="S">シングル
 
         <select name="arrangesecond_score">
-            @for($i = 1; $i <= 20; $i++)
+            @for($i = 0; $i <= 20; $i++)
                 <option value="{{$i}}">{{$i}}</option>
             @endfor
         </select>
@@ -80,7 +80,7 @@
         <input type="radio" name="arrangethird_type" value="S">シングル
 
         <select name="arrangethird_score">
-            @for($i = 1; $i <= 20; $i++)
+            @for($i = 0; $i <= 20; $i++)
                 <option value="{{$i}}">{{$i}}</option>
             @endfor
         </select>

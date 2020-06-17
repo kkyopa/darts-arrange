@@ -38,7 +38,6 @@
         <th scope="col">1投目</th>
         <th scope="col">2投目</th>
         <th scope="col">3投目</th>
-        <th scope="col">詳細</th>
         </tr>
     </thead>
     <tbody>
@@ -49,7 +48,6 @@
                 <td>{{ $d->arrangefirst }}</td>
                 <td>{{ $d->arrangesecond }}</td>
                 <td>{{ $d->arrangethird }}</td>
-                <td><a href="{{ url('openout/show', ['id' => $d->id ]) }}" class="btn btn-info" >詳細</a></td>
             </tr>
         @endforeach
         @else
