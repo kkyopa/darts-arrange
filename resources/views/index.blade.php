@@ -8,6 +8,8 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/pc.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/sp.css') }}" rel="stylesheet">
         <title>Laravel</title>
 
         <!-- Fonts -->
