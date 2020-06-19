@@ -53,8 +53,6 @@ private static function changeScore($type, $score) {
   private static function createScore($type, $score) {
     if($type  == "BULL") {
       return $type;
-    } elseif($score == 0) {
-        return null;
     } else {
       return $type . $score;
     }
