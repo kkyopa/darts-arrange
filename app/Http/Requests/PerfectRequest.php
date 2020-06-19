@@ -25,9 +25,7 @@ class PerfectRequest extends FormRequest
     public function rules()
     {
         return [
-            'arrangefirst_score'=>['required','min:1','max:20'],
-            'arrangesecond_score'=>['required','min:1','max:20'],
-            'arrangethird_score'=>['required','min:1','max:20'],
+            'arrangefirst_type'=>['required'],
         ];
     }
 }
