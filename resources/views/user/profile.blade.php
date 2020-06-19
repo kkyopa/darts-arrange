@@ -14,4 +14,8 @@
     フライト
 </div><br>
 
+
+
+{{ Auth::user()->image }}
+
 @endsection
