@@ -34,6 +34,7 @@
 <table class ="table">
     <thead>
         <tr>
+        <th scope="col">順位</th>
         <th scope="col">スコア (件数)</th>
         <th scope="col">1投目</th>
         <th scope="col">2投目</th>
@@ -42,9 +43,10 @@
     </thead>
     <tbody>
     @if($openout->count())
-        @foreach($openout as $d)
+        @foreach($openout as $key => $d)
                 <tr>
-                <th>{{ $d->arrangenumber }}({{ $d->count}})</th>
+                <td>{{$key+1}}</td>
+                <th>{{ $d->arrangenumber }}({{ $d->count}}){{floor($d->count/$count*100)}}%</th>
                 <td>{{ $d->arrangefirst }}</td>
                 <td>{{ $d->arrangesecond }}</td>
                 <td>{{ $d->arrangethird }}</td>

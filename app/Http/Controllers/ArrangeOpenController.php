@@ -12,9 +12,8 @@ class ArrangeOpenController extends Controller
 {
     public function index(Request $request) {
         $authUser = Auth::user();
-        $query = Openout::select('id','user_id', 'arrangenumber', 'arrangefirst', 'arrangesecond', 'arrangethird', 'arrangememo',DB::raw('count(*) as count'));
         // withメゾットでuserをリレーションさせる
-        $query->with(['user']);
+        $query = Openout::with(['user']);
         $keyword = $request->input('keyword');
         $rating = $request->input('rating');
         if (!empty($keyword)) {
@@ -27,12 +26,13 @@ class ArrangeOpenController extends Controller
                 $query->where('rating', $rating);
             });
         }
-
+        $count = $query->count();
+        $query->select('id','user_id', 'arrangenumber', 'arrangefirst', 'arrangesecond', 'arrangethird', 'arrangememo',DB::raw('count(*) as count'));
         $query->groupBy('arrangefirst', 'arrangesecond', 'arrangethird');
         // $query->orderBy('arrangenumber', 'asc');
         $query->orderByRaw('COUNT(*) DESC');
         $openout = $query->paginate(10);
-        return view('/arrange-data/openout_data', compact('openout','authUser','keyword','rating'));
+        return view('/arrange-data/openout_data', compact('openout','authUser','keyword','rating','count'));
     }
 }
 
