@@ -44,7 +44,7 @@
         </tr>
     </thead>
     <tbody>
-    @if($openout->count())
+    @if($keyword)
         @foreach($openout as $key => $d)
                 <tr>
                 <th>{{ $d->arrangenumber }}</th>
@@ -56,8 +56,11 @@
                 <td>{{ $d->arrangethird }}</td>
             </tr>
         @endforeach
-        @else
-            <p>見つかりませんでした。</p>
+            @if(!$openout->count())
+            <p>検索結果が見当たりません</p>
+            @endif
+         @else
+            <p>スコアを入力してください</p>
         @endif
 </tbody>
 </table>

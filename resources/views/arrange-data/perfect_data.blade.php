@@ -42,7 +42,7 @@
         </tr>
     </thead>
     <tbody>
-    @if($perfect->count())
+    @if($keyword)
         @foreach($perfect as $key => $d)
                 <tr>
                 <th>{{ $d->arrangenumber }}</th>
@@ -54,8 +54,11 @@
                 <td>{{ $d->arrangethird }}</td>
             </tr>
         @endforeach
+        @if(!$perfect->count())
+        <p>検索結果が見当たりません</p>
+            @endif
         @else
-            <p>見つかりませんでした。</p>
+            <p>スコアを入力してください</p>
         @endif
 </tbody>
 </table>

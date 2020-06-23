@@ -44,9 +44,9 @@
         </tr>
     </thead>
     <tbody>
-    @if($masterout->count())
+        @if($keyword)
         @foreach($masterout as $key => $d)
-                <tr>
+            <tr>
                 <th>{{ $d->arrangenumber }}</th>
                 <td>{{ $d->count}}件</td>
                 <td>{{floor($d->count/$count*100)}}%</td>
@@ -56,8 +56,11 @@
                 <td>{{ $d->arrangethird }}</td>
             </tr>
         @endforeach
-        @else
-            <p>見つかりませんでした。</p>
+            @if(!$masterout->count())
+                <p>検索結果が見当たりません</p>
+            @endif
+         @else
+            <p>スコアを入力してください</p>
         @endif
 </tbody>
 </table>
