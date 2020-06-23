@@ -11,10 +11,9 @@ use Illuminate\Support\Facades\DB;
 class ArrangePerfectController extends Controller
 {
     public function index(Request $request) {
-        $authUser = Auth::user();
-        $query = Perfect::select('id','user_id', 'arrangenumber', 'arrangefirst', 'arrangesecond', 'arrangethird', 'arrangememo',DB::raw('count(*) as count'));
+        $authUser = Auth::user(); 
         // withメゾットでuserをリレーションさせる
-        $query->with(['user']);
+        $query = Perfect::with(['user']);
         $keyword = $request->input('keyword');
         $rating = $request->input('rating');
         if (!empty($keyword)) {
@@ -27,11 +26,11 @@ class ArrangePerfectController extends Controller
                 $query->where('rating', $rating);
             });
         }
-
+        $count = $query->count();
+        $query->select('id','user_id', 'arrangenumber', 'arrangefirst', 'arrangesecond', 'arrangethird', 'arrangememo',DB::raw('count(*) as count'));
         $query->groupBy('arrangefirst', 'arrangesecond', 'arrangethird');
-        // $query->orderBy('arrangenumber', 'asc');
         $query->orderByRaw('COUNT(*) DESC');
         $perfect = $query->paginate(10);
-        return view('/arrange-data/perfect_data', compact('perfect','authUser','keyword','rating'));
+        return view('/arrange-data/perfect_data', compact('perfect','authUser','keyword','rating','count'));
     }
 }

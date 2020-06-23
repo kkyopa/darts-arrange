@@ -35,12 +35,15 @@
     <input type="hidden" name="user_id" value="{{ Auth::user()->id }}"><br><br>
 
     <div>
-        <input type="radio" name="arrangefirst_type" value="BULL">BULL
+        <p>1投目</p>
+        <input type="radio" name="arrangefirst_type" value="DBULL">DBULL
+        <input type="radio" name="arrangefirst_type" value="SBULL">SBULL
         <input type="radio" name="arrangefirst_type" value="T">トリプル
         <input type="radio" name="arrangefirst_type" value="D">ダブル
         <input type="radio" name="arrangefirst_type" value="S">シングル
 
         <select name="arrangefirst_score">
+        <option value="">選択してください</option>
             @for($i = 1; $i <= 20; $i++)
                 <option value="{{$i}}">{{$i}}</option>
             @endfor
@@ -48,12 +51,15 @@
     </div>
 
     <div>
-        <input type="radio" name="arrangesecond_type" value="BULL">BULL
+        <p>2投目</p>
+        <input type="radio" name="arrangesecond_type" value="DBULL">DBULL
+        <input type="radio" name="arrangesecond_type" value="SBULL">SBULL
         <input type="radio" name="arrangesecond_type" value="T">トリプル
         <input type="radio" name="arrangesecond_type" value="D">ダブル
         <input type="radio" name="arrangesecond_type" value="S">シングル
 
         <select name="arrangesecond_score">
+        <option value="">選択してください</option>
             @for($i = 1; $i <= 20; $i++)
                 <option value="{{$i}}">{{$i}}</option>
             @endfor
@@ -61,10 +67,12 @@
     </div>
 
     <div>
-        <input type="radio" name="arrangethird_type" value="BULL">BULL
+        <p>3投目</p>
+        <input type="radio" name="arrangethird_type" value="DBULL">DBULL
         <input type="radio" name="arrangethird_type" value="D">ダブル
 
         <select name="arrangethird_score">
+        <option value="">選択してください</option>
             @for($i = 1; $i <= 20; $i++)
                 <option value="{{$i}}">{{$i}}</option>
             @endfor

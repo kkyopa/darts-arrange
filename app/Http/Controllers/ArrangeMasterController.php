@@ -12,9 +12,8 @@ class ArrangeMasterController extends Controller
 {
     public function index(Request $request) {
         $authUser = Auth::user();
-        $query = Masterout::select('id','user_id', 'arrangenumber', 'arrangefirst', 'arrangesecond', 'arrangethird', 'arrangememo',DB::raw('count(*) as count'));
         // withメゾットでuserをリレーションさせる
-        $query->with(['user']);
+        $query = Masterout::with(['user']);
         $keyword = $request->input('keyword');
         $rating = $request->input('rating');
         if (!empty($keyword)) {
@@ -27,10 +26,11 @@ class ArrangeMasterController extends Controller
                 $query->where('rating', $rating);
             });
         }
-
+        $count = $query->count();
+        $query->select('id','user_id', 'arrangenumber', 'arrangefirst', 'arrangesecond', 'arrangethird', 'arrangememo',DB::raw('count(*) as count'));
         $query->groupBy('arrangefirst', 'arrangesecond', 'arrangethird');
         $query->orderByRaw('COUNT(*) DESC');
         $masterout = $query->paginate(10);
-        return view('/arrange-data/masterout_data', compact('masterout','authUser','keyword','rating'));
+        return view('/arrange-data/masterout_data', compact('masterout','authUser','keyword','rating','count'));
     }
 }

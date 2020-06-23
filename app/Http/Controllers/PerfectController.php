@@ -38,8 +38,10 @@ class PerfectController extends Controller
     }
 
     private static function changeScore($type, $score) {
-        if ($type === 'BULL') {
+        if ($type === 'DBULL') {
           return 50;
+        } elseif($type === 'SBULL') {
+          return 25;
         } elseif($type === 'T') {
           return $score * 3;
         } elseif($type === 'D') {

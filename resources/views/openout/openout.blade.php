@@ -48,6 +48,7 @@
 
 
     <div>
+        <p>1投目</p>
         <input type="radio" name="arrangefirst_type" value="BULL">BULL
         <input type="radio" name="arrangefirst_type" value="T">トリプル
         <input type="radio" name="arrangefirst_type" value="D">ダブル
@@ -62,6 +63,7 @@
     </div>
 
     <div>
+        <p>2投目</p>
         <input type="radio" name="arrangesecond_type" value="BULL">BULL
         <input type="radio" name="arrangesecond_type" value="T">トリプル
         <input type="radio" name="arrangesecond_type" value="D">ダブル
@@ -76,6 +78,7 @@
     </div>
 
     <div>
+        <p>3投目</p>
         <input type="radio" name="arrangethird_type" value="BULL">BULL
         <input type="radio" name="arrangethird_type" value="T">トリプル
         <input type="radio" name="arrangethird_type" value="D">ダブル
