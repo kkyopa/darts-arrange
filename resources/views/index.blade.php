@@ -152,7 +152,7 @@
         </div>
     </div>
         <footer>
-            <p>© 2020 darts-arrange All rights Reserved.</p>
+            <p>© 2020 Darts- Arrange All rights Reserved.</p>
         </footer>
         @yield('content')
     </body>
