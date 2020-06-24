@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOpenoutsTable extends Migration
+class CreatePerfectsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateOpenoutsTable extends Migration
      */
     public function up()
     {
-        Schema::create('openouts', function (Blueprint $table) {
+        Schema::create('perfects', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
@@ -28,7 +28,6 @@ class CreateOpenoutsTable extends Migration
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *
@@ -36,6 +35,6 @@ class CreateOpenoutsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('openouts');
+        Schema::dropIfExists('perfects');
     }
 }

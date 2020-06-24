@@ -19,15 +19,15 @@
 
 
 <p>変更前のアレンジ:</p>
-<input name="ex_arrangenumber" value="{{ $openout->arrangenumber }}">
+<input name="ex_arrangenumber" value="{{ $masterout->arrangenumber }}">
 スコア<br>
-<input name="ex_arrangefirst" value="{{ $openout->arrangefirst }}">
+<input name="ex_arrangefirst" value="{{ $masterout->arrangefirst }}">
 １投目<br>
-<input name="ex_arrangesecond" value="{{ $openout->arrangesecond }}">
+<input name="ex_arrangesecond" value="{{ $masterout->arrangesecond }}">
 ２投目<br>
-<input name="ex_arrangethird" value="{{ $openout->arrangethird }}">
+<input name="ex_arrangethird" value="{{ $masterout->arrangethird }}">
 ３投目<br>
-<textarea name="ex_arrangememo" rows="4" cols="40">{{ $openout->arrangememo }}</textarea>
+<textarea name="ex_arrangememo" rows="4" cols="40">{{ $masterout->arrangememo }}</textarea>
 アレンジメモ<br><br><br>
 
 
@@ -39,24 +39,24 @@
     </ul>
 @endif
 
-<form method="POST" action="{{ url('openout/update', ['id' => $openout->id ]) }}">
+<form method="POST" action="{{ url('masterout/update', ['id' => $masterout->id ]) }}">
 {{ csrf_field() }}
 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}"><br><br>
 
     アレンジナンバー<br>
-    <input name="arrangenumber" value="{{ $openout->arrangenumber }}">
+    <input name="arrangenumber" value="{{ $masterout->arrangenumber }}">
     <br>
     １投目<br>
-    <input name="arrangefirst" value="{{ $openout->arrangefirst }}">
+    <input name="arrangefirst" value="{{ $masterout->arrangefirst }}">
     <br>
     ２投目<br>
-    <input name="arrangesecond" value="{{ $openout->arrangesecond }}">
+    <input name="arrangesecond" value="{{ $masterout->arrangesecond }}">
     <br>
     ３投目<br>
-    <input name="arrangethird" value="{{ $openout->arrangethird }}">
+    <input name="arrangethird" value="{{ $masterout->arrangethird }}">
     <br>
     アレンジメモ:<br>
-    <textarea name="arrangememo" rows="4" cols="40" value="{{ $openout->arrangememo }}" ></textarea>
+    <textarea name="arrangememo" rows="4" cols="40" value="{{ $masterout->arrangememo }}" ></textarea>
     <br>
     <button class="btn btn-success"> 送信 </button>
 </form>

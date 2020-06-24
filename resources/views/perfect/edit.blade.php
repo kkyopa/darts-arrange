@@ -19,15 +19,15 @@
 
 
 <p>変更前のアレンジ:</p>
-<input name="ex_arrangenumber" value="{{ $openout->arrangenumber }}">
+<input name="ex_arrangenumber" value="{{ $perfect->arrangenumber }}">
 スコア<br>
-<input name="ex_arrangefirst" value="{{ $openout->arrangefirst }}">
+<input name="ex_arrangefirst" value="{{ $perfect->arrangefirst }}">
 １投目<br>
-<input name="ex_arrangesecond" value="{{ $openout->arrangesecond }}">
+<input name="ex_arrangesecond" value="{{ $perfect->arrangesecond }}">
 ２投目<br>
-<input name="ex_arrangethird" value="{{ $openout->arrangethird }}">
+<input name="ex_arrangethird" value="{{ $perfect->arrangethird }}">
 ３投目<br>
-<textarea name="ex_arrangememo" rows="4" cols="40">{{ $openout->arrangememo }}</textarea>
+<textarea name="ex_arrangememo" rows="4" cols="40">{{ $perfect->arrangememo }}</textarea>
 アレンジメモ<br><br><br>
 
 
@@ -39,24 +39,24 @@
     </ul>
 @endif
 
-<form method="POST" action="{{ url('openout/update', ['id' => $openout->id ]) }}">
+<form method="POST" action="{{ url('perfect/update', ['id' => $perfect->id ]) }}">
 {{ csrf_field() }}
 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}"><br><br>
 
     アレンジナンバー<br>
-    <input name="arrangenumber" value="{{ $openout->arrangenumber }}">
+    <input name="arrangenumber" value="{{ $perfect->arrangenumber }}">
     <br>
     １投目<br>
-    <input name="arrangefirst" value="{{ $openout->arrangefirst }}">
+    <input name="arrangefirst" value="{{ $perfect->arrangefirst }}">
     <br>
     ２投目<br>
-    <input name="arrangesecond" value="{{ $openout->arrangesecond }}">
+    <input name="arrangesecond" value="{{ $perfect->arrangesecond }}">
     <br>
     ３投目<br>
-    <input name="arrangethird" value="{{ $openout->arrangethird }}">
+    <input name="arrangethird" value="{{ $perfect->arrangethird }}">
     <br>
     アレンジメモ:<br>
-    <textarea name="arrangememo" rows="4" cols="40" value="{{ $openout->arrangememo }}" ></textarea>
+    <textarea name="arrangememo" rows="4" cols="40" value="{{ $perfect->arrangememo }}" ></textarea>
     <br>
     <button class="btn btn-success"> 送信 </button>
 </form>

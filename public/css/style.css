@@ -1,145 +1,105 @@
+/* 共通 */
+
 * {
-    margin :0px;
-    padding:0px;
+  margin :0px;
+  padding:0px;
 }
 
-html {
-    min-height: 100%;
-    position:relative;
+
+
+html, body {
+  background-color: #fff;
+  color: #636b6f;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 100;
+  height: 100vh;
+  margin: 0;
+  min-height: 100%;
+  position:relative;
+  /* background-image: url(../img/dartboard-top.jpg);
+  background-size:contain;
+  width:100%;
+  height:50px; */
 }
 
-body {
-    margin-bottom:5em;
+.full-height {
+  height: 100vh;
 }
 
-/* header */
-nav{
-    margin-top :30px;
-    text-align: center;
-    }
-    nav ul{
-    margin: 0 ;
-    padding: 0 ;
-    }
-    nav li{
-    list-style: none;
-    display: inline-block;
-    width: 10%;
-    min-width: 90px;
-    }
-    /* nav li:not(:last-child){
-    border-right:2px solid #ddd;
-    } */
-    nav a{
-    text-decoration: none;
-    color: #333;
-    }
-    nav a.current{
-    color: #00B0F0;
-    border-bottom:2px solid #00B0F0;
-    }
-    nav a:hover{
-    color:#F7CB4D;
-    border-bottom:2px solid #F7CB4D;
-    }
-
-
-/* フッダー */
-    footer{
-        bottom: 0;
-        height: 5em;
-        position: absolute;
-        width: 100%;
-        /* height: 100px; */
-        text-align: center;
-        float: left;
-        background-color: #174a5c;
-        color: white;
-    }
-
-.description {
-    margin-top:50px;
-    text-align:center;
+.flex-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
-.arrengeproblem {
-    text-align: center;
-    margin-top:120px;
-    margin-bottom:80px;
+.position-ref {
+  position: relative;
+}
+
+.top-right {
+  position: absolute;
+  right: 10px;
+  top: 18px;
+}
+
+.content {
+  text-align: center;
+}
+
+.title {
+  font-size: 30px;
+}
+
+.links > a {
+  color: #636b6f;
+  padding: 0 25px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.m-b-md {
+  margin-bottom: 30px;
 }
 
 .btn-sticky {
-    display: inline-block;
-    padding: 0.5em 3em;
-    text-decoration: none;
-    background: #174a5c;
-    /* font-weight:bold; */
-    box-shadow: 0px 2px 2px rgba(0,0,0, 0.29);
-    color:white;
+  display: inline-block;
+  padding: 0.5em 3em;
+  text-decoration: none;
+  background: #174a5c;
+  /* font-weight:bold; */
+  box-shadow: 0px 2px 2px rgba(0,0,0, 0.29);
+  color:white;
 }
 
-#first_title {
-    margin-top:30px;
-    text-align:center;
+/* フッダー */
+footer{
+  bottom: 0;
+  height: 3em;
+  width: 100%;
+  text-align: center;
+  float: left;
+  background-color: #174a5c;
+  color: white;
 }
+
+#wrapper {
+  min-height: 100%;
+}
+
+
+/* .container {
+  min-height: 100%;
+} */
+
 
 .twitter_icon {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top:50px;
-    width: 100px;
-    height: 100px;
-  }
-
-
-
-  table{
-    width: 100%;
-    border-collapse:separate;
-    border-spacing: 0;
-
-  }
-  
-  table th:first-child{
-    border-radius: 5px 0 0 0;
-  }
-  
-  table th:last-child{
-    border-radius: 0 5px 0 0;
-    border-right: 1px solid #3c6690;
-  }
-  
-  table th{
-    text-align: center;
-    color:white;
-    background: linear-gradient(#829ebc,#225588);
-    border-left: 1px solid #3c6690;
-    border-top: 1px solid #3c6690;
-    border-bottom: 1px solid #3c6690;
-    box-shadow: 0px 1px 1px rgba(255,255,255,0.3) inset;
-    width: 25%;
-    padding: 10px 0;
-  }
-  
-  table td{
-    text-align: center;
-    border-left: 1px solid #a8b7c5;
-    border-bottom: 1px solid #a8b7c5;
-    border-top:none;
-    box-shadow: 0px -3px 5px 1px #eee inset;
-    width: 25%;
-    padding: 10px 0;
-  }
-  
-  table td:last-child{
-    border-right: 1px solid #a8b7c5;
-  }
-  
-  table tr:last-child td:first-child {
-    border-radius: 0 0 0 5px;
-  }
-  
-  table tr:last-child td:last-child {
-    border-radius: 0 0 5px 0;
-  }
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:50px;
+  width: 100px;
+  height: 100px;
+}

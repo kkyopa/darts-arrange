@@ -1406,7 +1406,7 @@ html {
 
 body {
   font-family: "Raleway", sans-serif;
-  font-size: 14px;
+  font-size: 10px;
   line-height: 1.6;
   color: #636b6f;
   background-color: #f5f8fa;
@@ -5063,7 +5063,7 @@ tbody.collapse.in {
 .nav > li > a {
   position: relative;
   display: block;
-  padding: 10px 15px;
+  /* padding: 10px 15px; */
 }
 
 .nav > li > a:hover,

@@ -12,24 +12,11 @@
 <br>
 <h3>オープンアウト入力説明</h3>
 <br>
-<p>①スコアは任意の数字を入力</p>
-<p>②スコアを入力する際、最初の文字は「TかDかSの大文字を選択し入力した上で大文字の数字（１~２０）を入力してください（BULLの場合はBULLと入力）</p>
-<p>③メモが必要な場合はアレンジメモに記述</p>
+<p>①スコアを入力する際は、BULLを選ぶか、シングル、ダブル、トリプルのいずれかを選択したのち、数字も合わせて選択してください。</p>
+<p>②メモが必要な場合はアレンジメモに記述。</p>
+<p>③送信ボタンを押すと完了です!自動でアレンジのスコアが入力されます。</p>
 <p>④アレンジメモを確認したい、アレンジの変更、削除は詳細ボタンで変更できます。</p>
 <br>
-<p>例:</p>
-
-<input name="ex_arrangenumber" value="１６４">
-スコア<br>
-<input name="ex_arrangefirst" value="BULL">
-１投目<br>
-<input name="ex_arrangesecond" value="T２０">
-２投目<br>
-<input name="ex_arrangethird" value="T１８">
-３投目<br>
-<textarea name="ex_arrangememo" rows="4" cols="40" value="まずはBULLから!!"></textarea>
-アレンジメモ<br><br><br>
-
 
 <h3>さっそく登録してみよう</h3>
 
@@ -46,7 +33,7 @@
 
     <input type="hidden" name="user_id" value="{{ Auth::user()->id }}"><br><br>
 
-    スコア<br>
+    <!-- スコア<br>
     <input name="arrangenumber">
     <br>
     １投目<br>
@@ -57,7 +44,55 @@
     <br>
     ３投目<br>
     <input name="arrangethird">
-    <br>
+    <br> -->
+
+
+    <div>
+        <p>1投目</p>
+        <input type="radio" name="arrangefirst_type" value="BULL">BULL
+        <input type="radio" name="arrangefirst_type" value="T">トリプル
+        <input type="radio" name="arrangefirst_type" value="D">ダブル
+        <input type="radio" name="arrangefirst_type" value="S">シングル
+
+        <select name="arrangefirst_score">
+        <option value="">選択してください</option>
+            @for($i = 1; $i <= 20; $i++)
+                <option value="{{$i}}">{{$i}}</option>
+            @endfor
+        </select>
+    </div>
+
+    <div>
+        <p>2投目</p>
+        <input type="radio" name="arrangesecond_type" value="BULL">BULL
+        <input type="radio" name="arrangesecond_type" value="T">トリプル
+        <input type="radio" name="arrangesecond_type" value="D">ダブル
+        <input type="radio" name="arrangesecond_type" value="S">シングル
+
+        <select name="arrangesecond_score">
+            <option value="">選択してください</option>
+            @for($i = 1; $i <= 20; $i++)
+                <option value="{{$i}}">{{$i}}</option>
+            @endfor
+        </select>
+    </div>
+
+    <div>
+        <p>3投目</p>
+        <input type="radio" name="arrangethird_type" value="BULL">BULL
+        <input type="radio" name="arrangethird_type" value="T">トリプル
+        <input type="radio" name="arrangethird_type" value="D">ダブル
+        <input type="radio" name="arrangethird_type" value="S">シングル
+
+        <select name="arrangethird_score">
+            <option value="">選択してください</option>
+            @for($i = 1; $i <= 20; $i++)
+                <option value="{{$i}}">{{$i}}</option>
+            @endfor
+        </select>
+    </div><br>
+
+
     アレンジメモ<br>
     <textarea name="arrangememo" rows="4" cols="40"></textarea>
     <br>
