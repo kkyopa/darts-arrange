@@ -16,6 +16,7 @@
 
 
 
-{{ Auth::user()->image }}
+{{storage_path()}}{{ Auth::user()->image }}
+{{ asset(Auth::user()->image) }}
 
 @endsection
