@@ -64,7 +64,8 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         $file_name = $data['image']->getClientOriginalName();
-        $path = $data['image']->storeAs('/image',$file_name);
+        $data['image']->move(public_path().'/img/register',$file_name);
+        $path = '/img/register/'.$file_name;
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],

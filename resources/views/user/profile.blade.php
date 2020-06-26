@@ -13,10 +13,10 @@
   {{ Auth::user()->rating }}
     フライト
 </div><br>
+<img src="{{Auth::user()->image}}">
 
 
-
-{{storage_path()}}{{ Auth::user()->image }}
-{{ asset(Auth::user()->image) }}
+<!-- {{storage_path()}}{{ Auth::user()->image }}
+{{ asset(Auth::user()->image) }} -->
 
 @endsection
