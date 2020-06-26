@@ -182,7 +182,7 @@ return [
         'numeric'              => ':attributeには数値を指定してください。',
         'present'              => ':attributeには現在時刻を指定してください。',
         'regex'                => '正しい形式の:attributeを指定してください。入力説明の➁を参考に入力お願いします。',
-        'required'             => ':attributeは必須です。',
+        'required'             => ':attribute必須です。',
         'required_if'          => ':otherが:valueの時:attributeは必須です。',
         'required_unless'      => ':otherが:values以外の時:attributeは必須です。',
         'required_with'        => ':valuesのうちいずれかが指定された時:attributeは必須です。',
@@ -214,8 +214,15 @@ return [
             'arrangefirst' => '１投目',
             'arrangesecond' =>'２投目',
             'arrangethird' => '３投目',
+            'arrangefirst_type' =>'正しく入力してください',
+            'arrangefirst_score' =>'正しく入力してください',
+            'arrangesecond_type' =>'正しく入力してください',
+            'arrangesecond_score' =>'正しく入力してください',
+            'arrangethird_type' =>'正しく入力してください',
+            'arrangethird_score' =>'正しく入力してください',
             // 'password' => 'パスワード',
             // 'password_confirmation' => 'パスワード（確認）',
             // 'name' => 'ユーザー名'
+
         ],
     ];

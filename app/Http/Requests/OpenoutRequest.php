@@ -30,11 +30,19 @@ class OpenoutRequest extends FormRequest
         if (isset($this->arrangefirst_type) && $this->arrangefirst_type  !== 'BULL') {
             $rule['arrangefirst_score'] = ['required'];
         }
+        // secondのバリデーション
         if (isset($this->arrangesecond_type) && $this->arrangesecond_type  !== 'BULL') {
             $rule['arrangesecond_score'] = ['required'];
         }
+        if (isset($this->arrangesecond_score) && $this->arrangesecond_type  !== 'BULL') {
+            $rule['arrangesecond_type'] = ['required'];
+        }
+        // thirdのバリデーション
         if (isset($this->arrangethird_type) && $this->arrangethird_type  !== 'BULL') {
             $rule['arrangethird_score'] = ['required'];
+        }
+        if (isset($this->arrangethird_score) && $this->arrangethird_type  !== 'BULL') {
+            $rule['arrangethird_type'] = ['required'];
         }
         return $rule;
     }
