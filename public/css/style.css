@@ -90,11 +90,6 @@ footer{
 }
 
 
-/* .container {
-  min-height: 100%;
-} */
-
-
 .twitter_icon {
   display: block;
   margin-left: auto;
@@ -102,4 +97,13 @@ footer{
   margin-top:50px;
   width: 100px;
   height: 100px;
+}
+
+.profile_icon {
+  margin-top: 30px;
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  border: 5px solid black;
+  text-align : center
 }
