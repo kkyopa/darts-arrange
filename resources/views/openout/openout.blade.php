@@ -32,21 +32,6 @@
 {{ csrf_field() }}
 
     <input type="hidden" name="user_id" value="{{ Auth::user()->id }}"><br><br>
-
-    <!-- スコア<br>
-    <input name="arrangenumber">
-    <br>
-    １投目<br>
-    <input name="arrangefirst">
-    <br>
-    ２投目<br>
-    <input name="arrangesecond">
-    <br>
-    ３投目<br>
-    <input name="arrangethird">
-    <br> -->
-
-
     <div>
         <p>1投目</p>
         <input type="radio" name="arrangefirst_type" value="BULL">BULL

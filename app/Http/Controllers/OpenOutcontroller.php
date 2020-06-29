@@ -71,14 +71,18 @@ private static function changeScore($type, $score) {
 
     public function update(OpenoutRequest $request, $id)
     {
-        $arrange = Openout::find($id);
-        $arrange->arrangenumber = $request->arrangenumber;
-        $arrange->arrangefirst = $request->arrangefirst;
-        $arrange->arrangesecond = $request->arrangesecond;
-        $arrange->arrangethird = $request->arrangethird;
-        $arrange->arrangememo = $request->arrangememo;
-        $arrange->save();
-        return redirect('openout');
+      $arrange = Openout::find($id);
+      $arrange->user_id = $request->user_id;
+      $arrange->arrangefirst = self::createScore($request->arrangefirst_type, $request->arrangefirst_score);
+      $arrange->first_score = self::changeScore($request->arrangefirst_type, $request->arrangefirst_score);
+      $arrange->arrangesecond = self::createScore($request->arrangesecond_type, $request->arrangesecond_score);
+      $arrange->second_score = self::changeScore($request->arrangesecond_type, $request->arrangesecond_score);
+      $arrange->arrangethird = self::createScore($request->arrangethird_type, $request->arrangethird_score);
+      $arrange->third_score = self::changeScore($request->arrangethird_type, $request->arrangethird_score);
+      $arrange->arrangenumber = $arrange->first_score + $arrange->second_score + $arrange->third_score;
+      $arrange->arrangememo = $request->arrangememo;
+      $arrange->save();
+      return redirect('openout');
     }
 
     public function destroy(Request $request)

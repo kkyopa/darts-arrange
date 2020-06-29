@@ -16,6 +16,8 @@
 <p>②検索をクリックすると条件にあったものが表示されます!!</p>
 <br>
 
+<img class="profile_icon" src="{{ url('/img/example.png')}}">
+
 
 <h1>検索</h1>
 <br>
