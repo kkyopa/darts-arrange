@@ -9,7 +9,7 @@ use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
-class OpenOutcontroller extends Controller
+class OpenOutController extends Controller
 {
     public function index() {
         $authUser = Auth::user();
