@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<h3>マスターアウト編</h3>
+<h3>パーフェクト編</h3>
 <br>
 <h4>説明</h4>
 <br>
@@ -21,7 +21,7 @@
 <br>
 
 
-<h1>検索</h1>
+<h3>検索</h3>
 <br>
 <form method="GET" action="{{ url('../arrange-data/perfect_data') }}" class="form-inline my-2 my-lg-0">
     <h5>スコア</h5>

@@ -20,7 +20,7 @@
 <img class="arrangedata_explanation" src="{{ url('/img/example.png')}}">
 
 
-<h1>検索</h1>
+<h3>検索</h3>
 <br>
 <form method="GET" action="{{ url('../arrange-data/openout_data') }}" class="form-inline my-2 my-lg-0">
     <h5>スコア</h5>
