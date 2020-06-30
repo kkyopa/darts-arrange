@@ -7,22 +7,36 @@
     <title>掲示板</title>
 </head>
 <body>
-<h1>更新画面</h1>
+<h3>更新画面</h3><br>
 
+<h4>変更前のアレンジ</h4>
+<table class="table">
+        <thead>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="col">スコア</th>
+                <td>{{ $openout->arrangenumber }}</td>
+            </tr>
+            <tr>
+                <th scope="col">1投目</th>
+                <td>{{ $openout->arrangefirst }}</td>
+            </tr>
+            <tr>
+                <th scope="col">2投目</th>
+                <td>{{ $openout->arrangesecond }}</td>
+            </tr>
+            <tr>
+                <th scope="col">3投目</th>
+                <td>{{ $openout->arrangethird }}</td>
+            </tr>
 
-
-<p>変更前のアレンジ:</p>
-<input name="ex_arrangenumber" value="{{ $openout->arrangenumber }}">
-スコア<br>
-<input name="ex_arrangefirst" value="{{ $openout->arrangefirst }}">
-１投目<br>
-<input name="ex_arrangesecond" value="{{ $openout->arrangesecond }}">
-２投目<br>
-<input name="ex_arrangethird" value="{{ $openout->arrangethird }}">
-３投目<br>
-<textarea name="ex_arrangememo" rows="4" cols="40">{{ $openout->arrangememo }}</textarea>
-アレンジメモ<br><br><br>
-<h3>変更しよう</h3>
+            <tr>
+                <th scope="col">アレンジメモ</th>
+                <td>{{ $openout->arrangememo }}</td>
+            </tr>
+        </tbody>
+    </table>
 
 @if(count($errors) > 0)
     <ul>

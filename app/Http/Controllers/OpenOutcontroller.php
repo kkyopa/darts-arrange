@@ -72,7 +72,6 @@ private static function changeScore($type, $score) {
     public function update(OpenoutRequest $request, $id)
     {
       $arrange = Openout::find($id);
-      $arrange->user_id = $request->user_id;
       $arrange->arrangefirst = self::createScore($request->arrangefirst_type, $request->arrangefirst_score);
       $arrange->first_score = self::changeScore($request->arrangefirst_type, $request->arrangefirst_score);
       $arrange->arrangesecond = self::createScore($request->arrangesecond_type, $request->arrangesecond_score);
