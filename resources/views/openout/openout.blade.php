@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<h1>自分だけのアレンジ表を完成させよう!!</h1>
+<h1>アレンジ表を完成させよう!!</h1>
 <br>
 <h3>オープンアウト入力説明</h3>
 <br>
@@ -76,8 +76,7 @@
             @endfor
         </select>
     </div><br>
-
-
+    <br>
     アレンジメモ<br>
     <textarea name="arrangememo" rows="4" cols="40"></textarea>
     <br>
@@ -111,9 +110,7 @@
 </tbody>
 </table>
 <br><hr>
-
 {{ $openout->render() }}
-
 </body>
 </html>
 

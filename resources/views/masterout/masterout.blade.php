@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<h1>自分だけのアレンジ表を完成させよう!!</h1>
+<h1>アレンジ表を完成させよう!!</h1>
 <br>
 <h3>マスターアウト入力説明</h3>
 <br>
@@ -17,7 +17,6 @@
 <p>③送信ボタンを押すと完了です!自動でアレンジのスコアが入力されます。</p>
 <p>④アレンジメモを確認したい、アレンジの変更、削除は詳細ボタンで変更できます。</p>
 <br>
-
 
 <h3>さっそく登録してみよう</h3>
 
@@ -33,7 +32,6 @@
 {{ csrf_field() }}
 
     <input type="hidden" name="user_id" value="{{ Auth::user()->id }}"><br><br>
-
     <div>
         <p>1投目</p>
         <input type="radio" name="arrangefirst_type" value="BULL">BULL
@@ -110,9 +108,8 @@
         @endforeach
 </tbody>
 </table>
-
-
-
+<br><hr>
+{{ $masterout->render() }}
 </body>
 </html>
 

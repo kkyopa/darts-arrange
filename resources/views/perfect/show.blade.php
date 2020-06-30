@@ -3,35 +3,55 @@
 
 <!DOCTYPE HTML>
 <html>
+
 <head>
     <title>掲示板</title>
 </head>
+
 <body>
 
-<h1>詳細画面</h1>
+    <h3>詳細画面</h3>
 
-<input name="ex_arrangenumber" value="{{ $perfect->arrangenumber }}">
-スコア<br>
-<input name="ex_arrangefirst" value="{{ $perfect->arrangefirst }}">
-１投目<br>
-<input name="ex_arrangesecond" value="{{ $perfect->arrangesecond }}">
-２投目<br>
-<input name="ex_arrangethird" value="{{ $perfect->arrangethird }}">
-３投目<br>
-<textarea name="ex_arrangememo" rows="4" cols="40">{{ $perfect->arrangememo }}</textarea>
-アレンジメモ<br><br>
+    <table class="table">
+        <thead>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="col">スコア</th>
+                <td>{{ $perfect->arrangenumber }}</td>
+            </tr>
+            <tr>
+                <th scope="col">1投目</th>
+                <td>{{ $perfect->arrangefirst }}</td>
+            </tr>
+            <tr>
+                <th scope="col">2投目</th>
+                <td>{{ $perfect->arrangesecond }}</td>
+            </tr>
+            <tr>
+                <th scope="col">3投目</th>
+                <td>{{ $perfect->arrangethird }}</td>
+            </tr>
+
+            <tr>
+                <th scope="col">アレンジメモ</th>
+                <td>{{ $perfect->arrangememo }}</td>
+            </tr>
+        </tbody>
+    </table>
 
 
-<form method ="GET" action= "{{url('perfect/edit', ['id' => $perfect->id ])}}" >
-{{ csrf_field() }}
-    <input class="btn btn-info" type="submit" value="変更する">
-</form>
-<br>
-<form method ="POST" action= "{{url('perfect/destroy', ['id' => $perfect->id ])}}" >
-{{ csrf_field() }}
-    <input type="submit" value="削除する" class="btn btn-danger" onclick='return confirm("本当に削除しますか?");'>
-</form>
+    <form method="GET" action="{{url('perfect/edit', ['id' => $perfect->id ])}}">
+        {{ csrf_field() }}
+        <input class="btn btn-info" type="submit" value="変更する">
+    </form>
+    <br>
+    <form method="POST" action="{{url('perfect/destroy', ['id' => $perfect->id ])}}">
+        {{ csrf_field() }}
+        <input type="submit" value="削除する" class="btn btn-danger" onclick='return confirm("本当に削除しますか?");'>
+    </form>
 
 </body>
+
 </html>
 @endsection

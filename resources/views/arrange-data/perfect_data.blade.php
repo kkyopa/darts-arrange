@@ -8,16 +8,20 @@
 </head>
 <body>
 
-<h1>オープンアウト編</h1>
+<h3>パーフェクト編</h3>
 <br>
-<h3>オープンアウト説明</h3>
+<h4>説明</h4>
 <br>
-<p>①検索したいスコアとフライトを選択</p>
+<p>①検索したいスコアは必須でフライトは任意で選択してください</p>
 <p>②検索をクリックすると条件にあったものが表示されます!!</p>
+<p>③比率やランキング順に表示されアレンジの統計を出すことが出来ます</p>
+<br>
+
+<img class="arrangedata_explanation" src="{{ url('/img/example.png')}}">
 <br>
 
 
-<h1>検索</h1>
+<h3>検索</h3>
 <br>
 <form method="GET" action="{{ url('../arrange-data/perfect_data') }}" class="form-inline my-2 my-lg-0">
     <h5>スコア</h5>
