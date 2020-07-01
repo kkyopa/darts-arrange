@@ -4,7 +4,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>掲示板</title>
+    <title>dartsArrange</title>
 </head>
 <body>
 
