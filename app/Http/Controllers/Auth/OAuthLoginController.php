@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Socialite;
 use App\User;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\DB;
 
 class OAuthLoginController extends Controller
@@ -54,8 +54,8 @@ class OAuthLoginController extends Controller
            $img = file_get_contents($userSocial->avatar_original);
            if ($img !== false) {
                $file_name = $userSocial->id . '_' . uniqid() . '.jpg';
-               Storage::put('public/profile_images/' . $file_name, $img);
-               $newuser->avatar = $file_name;
+               File::move(public_path().'/img/register',$file_name);
+               $newuser->image = '/img/register/'.$file_name;
            }
            //ユーザ作成
            $newuser->save();
