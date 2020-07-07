@@ -61,7 +61,7 @@ class OAuthLoginController extends Controller
            $newuser->save();
            //ログインしてトップページにリダイレクト
            Auth::login($newuser);
-           return redirect('/');
+           return redirect('/auth/rating');
        }
 
    }

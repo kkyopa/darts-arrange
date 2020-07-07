@@ -11,6 +11,10 @@ use Illuminate\Support\Facades\DB;
 
 class MasterOutController extends Controller
 {
+    public function __construct(){
+      $this->middleware('auth');
+    }
+
     public function index() {
         $authUser = Auth::user();
         $query = DB::table('masterouts');
