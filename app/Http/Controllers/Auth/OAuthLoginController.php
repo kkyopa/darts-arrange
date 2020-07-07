@@ -51,10 +51,10 @@ class OAuthLoginController extends Controller
            $newuser->twitter_id = $userSocial->getNickname();
 
            // 画像の取得
-           $img = file_get_contents($userSocial->avatar_original);
+           $img = File::get($userSocial->avatar_original);
            if ($img !== false) {
                $file_name = $userSocial->id . '_' . uniqid() . '.jpg';
-               File::move($file_name,public_path().'/img/register/'. $file_name);
+               File::move($img,public_path().'/img/register/'. $file_name);
                $newuser->image = '/img/register/'.$file_name;
            }
            //ユーザ作成
