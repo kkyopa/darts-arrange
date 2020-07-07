@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\DB;
 class ArrangePerfectController extends Controller
 {
     public function index(Request $request) {
-        $authUser = Auth::user(); 
+        $authUser = Auth::user();
         // withメゾットでuserをリレーションさせる
         $query = Perfect::with(['user']);
         $keyword = $request->input('keyword');
