@@ -53,6 +53,10 @@ Route::post('/perfect/destroy/{id}', 'PerfectController@destroy');
 // ログイン
 Auth::routes();
 
+Route::get('/auth/rating',  function () {
+    return view('/auth/rating');
+});
+
 
 // プロフィール系
 Route::get('/user/profile', 'OpenOutController@profile');
