@@ -49,14 +49,14 @@ class OAuthLoginController extends Controller
            $newuser->name = $userSocial->getName();
            $newuser->email = $userSocial->getEmail();
            $newuser->twitter_id = $userSocial->getNickname();
-
+           $newuser->image = $userSocial->avatar_original;
            // 画像の取得
-           $img = File::get($userSocial->avatar_original);
-           if ($img !== false) {
-               $file_name = $userSocial->id . '_' . uniqid() . '.jpg';
-               File::move($img,public_path().'/img/register/'. $file_name);
-               $newuser->image = '/img/register/'.$file_name;
-           }
+        //    $img = File::get($userSocial->avatar_original);
+        //    if ($img !== false) {
+        //        $file_name = $userSocial->id . '_' . uniqid() . '.jpg';
+        //        File::move($img,public_path().'/img/register/'. $file_name);
+        //        $newuser->image = '/img/register/'.$file_name;
+        //    }
            //ユーザ作成
            $newuser->save();
            //ログインしてトップページにリダイレクト
