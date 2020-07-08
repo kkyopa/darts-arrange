@@ -24,7 +24,6 @@ Route::get('/arrange-data/masterout_data', 'ArrangeMasterController@index');
 Route::get('/arrange-data/perfect_data', 'ArrangePerfectController@index');
 
 
-
 // オープンアウト
 Route::get('/openout', 'OpenOutController@index');
 Route::post('/openout', 'OpenOutController@create');
@@ -53,10 +52,9 @@ Route::post('/perfect/destroy/{id}', 'PerfectController@destroy');
 // ログイン
 Auth::routes();
 
-Route::get('/auth/rating',  function () {
-    return view('/auth/rating');
-});
 
+Route::get('/auth/rating', 'RegisterRatingController@index');
+Route::post('/auth/rating', 'RegisterRatingController@update');
 
 // プロフィール系
 Route::get('/user/profile', 'OpenOutController@profile');
