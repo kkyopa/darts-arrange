@@ -53,8 +53,8 @@ Route::post('/perfect/destroy/{id}', 'PerfectController@destroy');
 Auth::routes();
 
 
-Route::get('/auth/rating', 'Auth/RegisterRatingController@index');
-Route::post('/auth/rating', 'Auth/RegisterRatingController@update');
+Route::get('/auth/rating', 'Auth\RegisterRatingController@index');
+Route::post('/auth/rating', 'Auth\RegisterRatingController@update');
 
 // プロフィール系
 Route::get('/user/profile', 'OpenOutController@profile');
