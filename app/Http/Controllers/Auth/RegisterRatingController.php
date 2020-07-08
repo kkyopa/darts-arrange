@@ -16,7 +16,6 @@ class RegisterRatingController extends Controller
     }
 
     public function update($request) {
-        // $ragister_rating = Auth::id();
         $user = User::find(Auth::id());
         $user->rating = $request->input('rating');
         $user->save();
