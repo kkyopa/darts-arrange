@@ -12,5 +12,7 @@
       フライト
     <br>
     <img class="profile_icon" src="{{Auth::user()->image}}">
+    <br><br>
+    <a href="{{ url('auth/rating') }}">フライトの変更はこちら</span></a>
   </div>
 @endsection
