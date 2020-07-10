@@ -109,9 +109,9 @@ return [
         // 'password' => [
         //     'required' => 'パスワードを入力してください',
         // ],
-        'rating' => [
-            'required' => '入力してください',
-        ],
+        // 'rating' => [
+        //     'required' => '入力してください',
+        // ],
     ],
 
     // /*
@@ -210,6 +210,7 @@ return [
 
         'attributes' => [
             'rating' => 'フライト',
+            'image' => 'プロフィール画像',
             'arrangenumber' => 'スコア',
             'arrangefirst' => '１投目',
             'arrangesecond' =>'２投目',
