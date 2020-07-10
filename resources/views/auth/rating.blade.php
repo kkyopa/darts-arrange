@@ -63,7 +63,7 @@
                 @endif
 
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('/auth/rating') }}" enctype="multipart/form-data">
+                    <form class="form-horizontal" method="POST" action="{{ url('/auth/rating') }}" enctype="multipart/form-data">
                         {{ csrf_field() }}
 
                         <div class="form-group">
