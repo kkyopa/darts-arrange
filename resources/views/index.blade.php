@@ -142,8 +142,8 @@
                         <p>このアプリはユーザーがダーツによるオリジナルのアレンジをウェブ上に保存、閲覧が可能です。</p><br>
                         <p>ウェブ上に保存したものからユーザーがもっとも多く回答したアレンジを抽出しランキング化した表も記載しております。</p><br>
                         <p>オープンアウト編・マスターアウト編・パーフェクト編３種類ございます。空いた時間に気軽に対策してください</p>
-
-                        <a href="{{ url('login/twitter')}}">twitterログイン</a>
+                        <!-- <a href="{{ url('login/twitter')}}">twitterログイン</a> -->
+                        <a href="{{ url('login/twitter')}}"><img alt="文字表示" class="twitter_icon_login"  src="{{ asset('/img/twitter-icon.jpg') }}">twitterで新規登録</a>
                     </div>
                 @endif
                 <!-- <div id="app">
