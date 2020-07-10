@@ -54,7 +54,7 @@ Auth::routes();
 
 
 Route::get('/auth/rating', 'Auth\RegisterRatingController@index');
-Route::post('/auth/rating/{id}', 'Auth\RegisterRatingController@update');
+Route::post('/auth/rating', 'Auth\RegisterRatingController@update');
 
 // プロフィール系
 Route::get('/user/profile', 'OpenOutController@profile');
