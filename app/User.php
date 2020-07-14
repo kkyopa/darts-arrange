@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Openout;
 use App\Masterout;
 use App\Perfect;
+use App\Notifications\CustomResetPassword;
 
 class User extends Authenticatable
 {
@@ -43,5 +44,9 @@ class User extends Authenticatable
     public function perfects() // 複数形
     {
         return $this->hasMany('App\Perfect');
+    }
+
+    public function sendPasswordResetNotification($token) {
+        $this->notify(new CustomResetPassword($token));
     }
 }
