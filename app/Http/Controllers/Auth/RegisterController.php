@@ -66,7 +66,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        Mail::to('kkyopa@gmail.com')->send( new SampleMail() );
+        // Mail::to('kkyopa@gmail.com')->send( new SampleMail() );
         $file_name = $data['image']->getClientOriginalName();
         $data['image']->move(public_path().'/img/register',$file_name);
         $path = '/img/register/'.$file_name;
