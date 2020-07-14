@@ -6,6 +6,8 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Mail\SampleMail;
+use Illuminate\Support\Facades\Mail;
 
 class RegisterController extends Controller
 {
@@ -64,6 +66,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        Mail::to('kkyopa@gmail.com')->send( new SampleMail() );
         $file_name = $data['image']->getClientOriginalName();
         $data['image']->move(public_path().'/img/register',$file_name);
         $path = '/img/register/'.$file_name;
