@@ -31,16 +31,16 @@ class ArrangeOpenController extends Controller
             $query->whereHas('user', function ($query) use ($name) {
                 $query->where('name', 'LIKE', "{$name}");
             });
+            $query->orderBy('arrangenumber', 'asc');
+        }
+        else {
+            $query->orderByRaw('COUNT(*) DESC');
         }
 
         $count = $query->count();
         $query->select('id','user_id', 'arrangenumber', 'arrangefirst', 'arrangesecond', 'arrangethird', 'arrangememo',DB::raw('count(*) as count'));
         $query->groupBy('arrangefirst', 'arrangesecond', 'arrangethird');
-        // $query->orderBy('arrangenumber', 'asc');
-        $query->orderByRaw('COUNT(*) DESC');
         $openout = $query->paginate(10);
         return view('/arrange-data/openout_data', compact('openout','authUser','keyword','rating','name','count'));
     }
 }
-
-

@@ -31,12 +31,15 @@ class ArrangePerfectController extends Controller
             $query->whereHas('user', function ($query) use ($name) {
                 $query->where('name', 'LIKE', "{$name}");
             });
+            $query->orderBy('arrangenumber', 'asc');
+        }
+        else {
+            $query->orderByRaw('COUNT(*) DESC');
         }
 
         $count = $query->count();
         $query->select('id','user_id', 'arrangenumber', 'arrangefirst', 'arrangesecond', 'arrangethird', 'arrangememo',DB::raw('count(*) as count'));
         $query->groupBy('arrangefirst', 'arrangesecond', 'arrangethird');
-        $query->orderByRaw('COUNT(*) DESC');
         $perfect = $query->paginate(10);
         return view('/arrange-data/perfect_data', compact('perfect','authUser','keyword','rating','name','count'));
     }
