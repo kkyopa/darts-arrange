@@ -34,7 +34,7 @@
         </p><br>
         <h5>名前</h5>
         <p><input type="text" class="form-control mr-sm-2" name="name" value="{{$name}}"></p><br>
-        <p><input class="btn btn-outline-success my-2 my-sm-0" type="submit" value="検索"></p>
+        <p><input class="btn btn-primary my-2 my-sm-0" type="submit" value="検索"></p>
     </form>
 
 
