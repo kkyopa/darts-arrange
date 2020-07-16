@@ -1,7 +1,7 @@
 @media screen and (max-width:767px) {
     /*　画面サイズが767pxからはここを読み込む　*/
     .arrengeproblem{
-      display:inline-block;
+      text-align: center;
     }
 
 }

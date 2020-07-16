@@ -135,12 +135,12 @@
                     <div class="description">
                         <p>このアプリはユーザーがダーツによるオリジナルのアレンジをウェブ上に保存、閲覧が可能です。</p><br>
                         <p>ウェブ上に保存したものからユーザーがもっとも多く回答したアレンジを抽出しランキング化した表も記載しております。</p><br>
-                        <p>オープンアウト編・マスターアウト編・パーフェクト編３種類ございます。空いた時間に気軽に対策してください</p>
+                        <p>オープンアウト編・マスターアウト編・ダブルアウト編３種類ございます。空いた時間に気軽に対策してください</p>
                     </div>
                     <div class="arrengeproblem">
                         <a href="{{ url('/openout') }}" class="btn-sticky">オープンアウト編</a><br><br>
                         <a href="{{ url('/masterout') }}" class="btn-sticky">マスターアウト編</a><br><br>
-                        <a href="{{ url('/perfect') }}" class="btn-sticky">パーフェクト編</a><br><br><br>
+                        <a href="{{ url('/perfect') }}" class="btn-sticky">ダブルアウト編</a><br><br><br>
                     </div>
                 @else
                 <div class="content">
@@ -150,7 +150,7 @@
                     <div class="description">
                         <p>このアプリはユーザーがダーツによるオリジナルのアレンジをウェブ上に保存、閲覧が可能です。</p><br>
                         <p>ウェブ上に保存したものからユーザーがもっとも多く回答したアレンジを抽出しランキング化した表も記載しております。</p><br>
-                        <p>オープンアウト編・マスターアウト編・パーフェクト編３種類ございます。空いた時間に気軽に対策してください</p>
+                        <p>オープンアウト編・マスターアウト編・ダブルアウト編３種類ございます。空いた時間に気軽に対策してください</p>
                         <!-- <a href="{{ url('login/twitter')}}">twitterログイン</a> -->
                         <a href="{{ url('login/twitter')}}"><img alt="文字表示" class="twitter_icon_login"  src="{{ asset('/img/twitter-login.jpg') }}"></a>
                     </div>
